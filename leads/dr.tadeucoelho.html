@@ -3,403 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Presença Digital, Dr. Tadeu Coelho | Agência Datta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Agência Datta - Prospecção Dr. Tadeu Coelho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50; /* Dark blue */
-            --secondary-color: #3498db; /* Lighter blue */
-            --accent-color: #e67e22; /* Orange */
-            --light-bg: #f4f7f6;
-            --text-color: #333;
-            --white-color: #ffffff;
-            --shadow-light: rgba(0, 0, 0, 0.1);
-            --shadow-medium: rgba(0, 0, 0, 0.2);
+            --color-dark-green: #091105;
+            --color-medium-green: #00392F;
+            --color-dark-grey: #323232;
+            --color-white: #FFFFFF;
+        }
+
+        /* Base Reset & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-bg);
-            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            color: var(--color-dark-grey);
+            background-color: var(--color-white);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px var(--shadow-medium);
-        }
-
-        .logo {
-            font-size: 1.8em;
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-dark-green);
             font-weight: 700;
-            color: var(--white-color);
-            text-decoration: none;
-            padding-left: 20px;
+            line-height: 1.2;
+            margin-bottom: 0.5em;
         }
 
-        .contact-info {
-            padding-right: 20px;
-            font-size: 0.9em;
-            display: flex;
-            gap: 15px;
-        }
-        .contact-info a {
-            color: var(--white-color);
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.5em; }
+        p { margin-bottom: 1em; }
+
+        a {
+            color: var(--color-medium-green);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .contact-info a:hover {
-            color: var(--accent-color);
+        a:hover {
+            color: var(--color-dark-green);
         }
 
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1532938911079-5eec8334465b?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat; /* Imagem de fundo relevante */
-            color: var(--white-color);
-            text-align: center;
-            padding: 100px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        .hero h1 {
-            font-size: 2.8em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
+        .text-center { text-align: center; }
+        .text-white { color: var(--color-white); }
+        .bg-dark-green { background-color: var(--color-dark-green); }
+        .bg-medium-green { background-color: var(--color-medium-green); }
+        .bg-white { background-color: var(--color-white); }
 
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            max-width: 700px;
-            opacity: 0.9;
-        }
-
+        /* Buttons */
         .btn {
-            background-color: var(--accent-color);
-            color: var(--white-color);
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1em;
-            transition: background-color 0.3s ease, transform 0.3s ease;
             display: inline-block;
-            box-shadow: 0 4px 6px var(--shadow-medium);
+            background-color: var(--color-medium-green);
+            color: var(--color-white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
         }
-
         .btn:hover {
-            background-color: #d35400; /* Darker orange */
+            background-color: var(--color-dark-green);
             transform: translateY(-2px);
         }
 
-        .section {
-            padding: 80px 0;
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            opacity: 0; /* For fade-in animation */
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
-            text-align: center;
             font-size: 2.2em;
-            margin-bottom: 60px;
-            color: var(--primary-color);
-            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--color-dark-green);
             position: relative;
+            padding-bottom: 0.5rem;
         }
         .section-title::after {
             content: '';
-            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background-color: var(--secondary-color);
-            margin: 15px auto 0;
+            background-color: var(--color-medium-green);
             border-radius: 2px;
         }
 
-        .about-content {
+        /* Header */
+        header {
+            background-color: var(--color-dark-green);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header-content {
             display: flex;
-            flex-direction: column;
-            gap: 40px;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
-        
-        .about-text {
-            max-width: 800px;
-        }
-        .about-text h3 {
-            color: var(--secondary-color);
-            font-size: 1.6em;
-            margin-bottom: 20px;
-        }
-        .about-text p {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .services-grid, .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card, .step-card {
-            background-color: var(--white-color);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px var(--shadow-light);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover, .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px var(--shadow-medium);
-        }
-
-        .service-card .icon, .step-card .icon {
-            font-size: 2.5em;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            display: block;
-        }
-        .service-card h3, .step-card h3 {
-            font-size: 1.4em;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        .service-card p, .step-card p {
-            font-size: 1em;
-            color: #666;
-        }
-
-        .why-us .container {
-            text-align: center;
-            max-width: 800px;
-        }
-        .why-us ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            margin-top: 40px;
-        }
-        .why-us ul li {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            color: #444;
-            position: relative;
-            padding-left: 30px;
-        }
-        .why-us ul li::before {
-            content: '✅'; /* Checkmark icon */
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-size: 1.2em;
-        }
-
-        .cta-section {
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            text-align: center;
-            padding: 80px 20px;
-            background-image: url('https://images.unsplash.com/photo-1542880099-275d27299a80?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Imagem de fundo relevante */
-            background-blend-mode: multiply;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        .header-logo {
+            font-size: 1.5em;
             font-weight: 700;
+            color: var(--color-white);
         }
-        .cta-section p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            text-align: center;
-            padding: 30px 0;
+        .header-contact .btn {
+            padding: 0.75rem 1.5rem;
             font-size: 0.9em;
         }
 
-        /* Responsive adjustments */
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--color-dark-green);
+            color: var(--color-white);
+            text-align: center;
+            padding: 6rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 57, 47, 0.7) 0%, rgba(9, 17, 5, 0.7) 100%);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        #hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.5rem;
+            color: var(--color-white);
+            animation: fadeInDown 1s ease-out;
+        }
+        #hero .subtitulo {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+        #hero .apoio {
+            font-size: 1.1em;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+        #hero .btn {
+            animation: bounceIn 1s ease-out 0.9s forwards;
+            opacity: 0;
+        }
+        .dr-profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--color-medium-green);
+            margin-bottom: 1.5rem;
+            animation: zoomIn 1s ease-out;
+        }
+
+        /* Diagnostico & Oportunidades */
+        .grid-container {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr; /* Mobile first */
+        }
+        .card {
+            background-color: var(--color-white);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+        .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 0.8rem;
+            color: var(--color-medium-green);
+            display: block;
+        }
+        .card h3 {
+            color: var(--color-dark-green);
+            font-size: 1.3em;
+            margin-bottom: 0.6rem;
+        }
+        .card p {
+            color: var(--color-dark-grey);
+            font-size: 0.95em;
+        }
+
+        /* Agencia Section */
+        #agencia {
+            background-color: rgba(0, 57, 47, 0.05); /* Lighter medium green */
+            text-align: center;
+        }
+        .agencia-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--color-white);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        #agencia .section-title {
+            margin-bottom: 2rem;
+        }
+        #agencia p {
+            font-size: 1.1em;
+            margin-bottom: 2rem;
+        }
+        .agencia-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .highlight-item {
+            background-color: var(--color-medium-green);
+            color: var(--color-white);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95em;
+            flex-grow: 1;
+            max-width: 280px;
+        }
+        .highlight-item:last-child {
+            background-color: var(--color-dark-green); /* Differentiate one highlight */
+        }
+
+        /* Final CTA Section */
+        #final-cta {
+            background-color: var(--color-dark-green);
+            color: var(--color-white);
+            text-align: center;
+            padding: 5rem 0;
+        }
+        #final-cta h2 {
+            font-size: 2.5em;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        #final-cta .apoio {
+            font-size: 1.2em;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        #final-cta .contact-info {
+            margin-top: 2rem;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        #final-cta .contact-info a {
+            color: var(--color-white);
+            font-weight: 500;
+            margin: 0 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-dark-green);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
         @media (min-width: 768px) {
-            .about-content {
-                flex-direction: row;
-                text-align: left;
+            h1 { font-size: 3.5em; }
+            h2 { font-size: 2.5em; }
+            h3 { font-size: 1.8em; }
+            
+            #hero h1 { font-size: 4em; }
+            #hero .subtitulo { font-size: 1.8em; }
+
+            .grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .section-title {
+                font-size: 2.8em;
+            }
+            .agencia-highlights {
+                gap: 2rem;
+            }
+            .highlight-item {
+                flex-grow: 0; /* Prevent overstretching on large screens */
             }
         }
 
-        @media (max-width: 767px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .section-title {
-                font-size: 1.8em;
-            }
-            .service-card, .step-card {
-                padding: 25px;
-            }
-            .cta-section h2 {
-                font-size: 2em;
-            }
-            .cta-section p {
-                font-size: 1em;
-            }
-            header {
-                flex-direction: column;
-                padding: 10px 0;
-            }
-            .contact-info {
-                padding-top: 10px;
-                padding-right: 0;
-            }
-            .logo {
-                padding-left: 0;
-            }
+        @media (min-width: 1024px) {
+            h1 { font-size: 4.5em; }
+            #hero h1 { font-size: 5em; }
+            #hero .subtitulo { font-size: 2em; }
+            .section-title { font-size: 3em; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="#" class="logo">Agência Datta</a>
-            <div class="contact-info">
-                <a href="mailto:contato@agenciadatta.com">📧 contato@agenciadatta.com</a>
-                <a href="https://wa.me/5511999999999" target="_blank">📞 (11) 99999-9999</a>
-            </div>
+        <div class="header-content">
+            <div class="header-logo">Agência Datta</div>
+            <a href="#final-cta" class="btn">Agende uma Conversa</a>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Dr. Tadeu Coelho, imagine transformar cada clique em um novo paciente qualificado?</h1>
-            <p>Com mais de 30 mil seguidores e sua sólida atuação em Emagrecimento, Saúde Hormonal e Lipedema, o próximo passo é aprimorar sua captação de pacientes.</p>
-            <a href="#cta" class="btn">Quero Otimizar Minhas Campanhas</a>
-        </div>
-    </section>
+    <main>
+        <section id="hero" class="animated">
+            <div class="hero-content">
+                <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/332380102_1363218881178470_5888591058616329849_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gFZkPIh6aHOh9vSPgh6XIo4E_HBlBUdbfrF1EynfDcx-O9T_9xS8IEQ5vsDra-CjWQ&_nc_ohc=st7kO0B98w4Q7kNvwEsVxsV&_nc_gid=6OsDC5nlxdaemccJmWYgNw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0DSEtIo1GHuPsYo9XSp26AvqyIpQkQ0TzyIOQx8pqlvw&oe=69DD4A2C&_nc_sid=8b3546" alt="Dr. Tadeu Coelho" class="dr-profile-pic">
+                <h1>Dr. Tadeu Coelho, como atrair mais pacientes qualificados para sua clínica no Ceará?</h1>
+                <p class="subtitulo">Transforme sua presença digital em agendamentos consistentes para Fortaleza, Juazeiro do Norte e Cascavel.</p>
+                <p class="apoio">Analisamos seu perfil e identificamos oportunidades claras para expandir seu alcance e atrair novos pacientes.</p>
+                <a href="#final-cta" class="btn">Agendar minha conversa agora</a>
+            </div>
+        </section>
 
-    <section class="section about">
-        <div class="container">
-            <h2 class="section-title">Sobre a Agência Datta</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Parceria Estratégica para o Crescimento Digital do Dr. Tadeu</h3>
-                    <p>Meu nome é Lucas Olimpio, fundador da Agência Datta. Desde 2021, transformo investimentos em mídia paga em resultados mensuráveis. Já gerenciei mais de R$ 10 milhões em tráfego pago e realizei mais de 100 implementações de rastreamento avançado para empresas como a sua.</p>
-                    <p>Sabemos que o Dr. Tadeu Coelho já possui uma presença digital forte e um perfil verificado, indicando uma busca por excelência. Nossa abordagem é complementar: focamos em decisões orientadas por dados, garantindo que cada real investido traga o retorno esperado em agendamentos qualificados para suas especialidades.</p>
+        <section id="diagnostico">
+            <div class="container">
+                <h2 class="section-title">Análise Personalizada do Seu Perfil Digital</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <span class="card-icon">🩺</span>
+                        <h3>Forte Presença e Autoridade Médica</h3>
+                        <p>Sua conta @dr.tadeucoelho, verificada no Instagram e com a credencial CRM-CE 15821, demonstra a solidez de sua atuação como médico especialista em saúde hormonal, emagrecimento, lipedema e sarcopenia.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">📈</span>
+                        <h3>Audiência Ativa no Instagram</h3>
+                        <p>Com mais de 30.121 seguidores no Instagram, você construiu uma base significativa de interessados em seus conteúdos e serviços, representando um grande potencial de conversão.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">📍</span>
+                        <h3>Atendimento Abrangente no Ceará</h3>
+                        <p>Sua atuação em Fortaleza, Juazeiro do Norte e Cascavel indica uma capilaridade importante. Isso abre portas para estratégias segmentadas de atração de pacientes em cada região.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">⭐</span>
+                        <h3>Serviços de Valor e Facilidade</h3>
+                        <p>A oferta de telemedicina, agendamentos via WhatsApp e o auxílio no reembolso médico adicionam um diferencial competitivo valioso, facilitando o acesso e a jornada do paciente.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">💡</span>
+                        <h3>Maturidade Digital e Otimização em Curso</h3>
+                        <p>A existência de uma página de links e o desenvolvimento por uma consultoria de marketing para médicos mostram seu investimento em uma presença digital estruturada.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section services">
-        <div class="container">
-            <h2 class="section-title">Nossas Soluções para Médicos como o Dr. Tadeu</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="icon">📈</span>
-                    <h3>Tráfego Pago Inteligente</h3>
-                    <p>Atraímos pacientes focados nas suas especialidades: Emagrecimento, Saúde Hormonal, Lipedema, Sarcopenia e Libido.</p>
-                </div>
-                <div class="service-card">
-                    <span class="icon">🎯</span>
-                    <h3>Rastreamento Avançado de Conversões</h3>
-                    <p>Tenha clareza total sobre o retorno de cada investimento em marketing. Saiba exatamente de onde vêm seus pacientes e qual a eficiência de cada campanha.</p>
-                </div>
-                <div class="service-card">
-                    <span class="icon">🤖</span>
-                    <h3>Automações para Agendamento</h3>
-                    <p>Otimizamos o processo de agendamento e relacionamento inicial, garantindo que nenhum paciente em potencial seja perdido e a equipe seja eficiente.</p>
-                </div>
-                <div class="service-card">
-                    <span class="icon">🌐</span>
-                    <h3>Páginas de Alta Conversão</h3>
-                    <p>Desenvolvemos páginas otimizadas para transformar o interesse dos seus mais de 30 mil seguidores em agendamentos de consulta.</p>
+        <section id="oportunidades" class="bg-dark-green">
+            <div class="container">
+                <h2 class="section-title text-white">Onde podemos atrair mais pacientes para você</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <span class="card-icon">🎯</span>
+                        <h3>Otimizar a Jornada do Paciente para Agendamentos</h3>
+                        <p>Sua página de links é um excelente ponto de partida. Podemos otimizá-la com funis de conversão mais diretos, direcionando os pacientes para o serviço exato que procuram com menos fricção.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🚀</span>
+                        <h3>Expandir a Captação Ativa nas Suas Cidades</h3>
+                        <p>Implementar campanhas de tráfego pago geolocalizadas permitirá que seus serviços alcancem especificamente as pessoas em Fortaleza, Juazeiro do Norte e Cascavel que precisam de sua especialidade.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">✅</span>
+                        <h3>Transformar Interesse do Instagram em Consultas</h3>
+                        <p>Com a sua audiência qualificada, podemos criar estratégias que direcionam esse engajamento para agendamentos efetivos, convertendo seguidores em pacientes de forma mais previsível.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section why-us">
-        <div class="container">
-            <h2 class="section-title">O Diferencial Datta para sua Prática Médica</h2>
-            <p>Sabemos que o Dr. Tadeu Coelho busca resultados e transparência. Nosso foco é fornecer inteligência de dados que sua estratégia atual pode usar para tomar decisões ainda mais assertivas:</p>
-            <ul>
-                <li>Chega de "achismos" em marketing médico: Nossas decisões são 100% orientadas por dados e análises precisas.</li>
-                <li>Clareza total sobre seus investimentos: Você saberá para onde vai cada real e qual o retorno exato gerado para sua clínica.</li>
-                <li>Previsibilidade de resultados: Com dados precisos e estratégias otimizadas, seus resultados se tornam mais consistentes ao longo do tempo.</li>
-                <li>Foco no paciente qualificado: Atração de leads que realmente se encaixam nas suas especialidades e necessidades.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section process">
-        <div class="container">
-            <h2 class="section-title">Como Ajudamos o Dr. Tadeu a Otimizar Resultados</h2>
-            <div class="process-steps">
-                <div class="step-card">
-                    <span class="icon">🔎</span>
-                    <h3>1. Diagnóstico Aprofundado</h3>
-                    <p>Analisamos sua presença digital atual, público-alvo e metas de captação de pacientes, identificando as melhores oportunidades para suas especialidades.</p>
-                </div>
-                <div class="step-card">
-                    <span class="icon">💡</span>
-                    <h3>2. Estratégia Personalizada</h3>
-                    <p>Desenvolvemos um plano digital focado no seu perfil ideal de paciente, utilizando dados para direcionar cada ação e maximizar a eficiência.</p>
-                </div>
-                <div class="step-card">
-                    <span class="icon">🚀</span>
-                    <h3>3. Implementação Orientada por Dados</h3>
-                    <p>Ativamos campanhas de tráfego pago e rastreamento avançado, monitorando performance em tempo real para o máximo impacto e otimização contínua.</p>
-                </div>
-                <div class="step-card">
-                    <span class="icon">⚙️</span>
-                    <h3>4. Otimização Contínua</h3>
-                    <p>Ajustamos e aprimoramos as estratégias com base nos dados e resultados, garantindo que o Dr. Tadeu alcance seus objetivos de crescimento de forma sustentável.</p>
+        <section id="servicos">
+            <div class="container">
+                <h2 class="section-title">Nossas soluções para sua prática médica</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <span class="card-icon">🌐</span>
+                        <h3>Tráfego Pago Estratégico e Localizado</h3>
+                        <p>Criamos e gerenciamos campanhas de anúncios focadas em atrair novos pacientes nas cidades de Fortaleza, Juazeiro do Norte e Cascavel, segmentando por interesse e necessidade.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">📄</span>
+                        <h3>Otimização de Páginas de Captura (Landing Pages)</h3>
+                        <p>Desenvolvemos páginas de destino otimizadas e específicas para cada um dos seus serviços (telemedicina, reembolso, agendamentos), garantindo uma experiência clara e que gera mais conversões.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">📊</span>
+                        <h3>Rastreamento Avançado de Dados</h3>
+                        <p>Implementamos um sistema de rastreamento robusto para que você saiba exatamente de onde cada paciente veio e qual o retorno sobre o investimento de cada campanha digital.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="cta" class="cta-section">
-        <div class="container">
-            <h2>Pronto para transformar a captação de pacientes do Dr. Tadeu com máxima eficiência e dados claros?</h2>
-            <p>Sua presença digital já é forte e verificada. Agora, vamos torná-la ainda mais estratégica, mensurável e focada em pacientes qualificados para suas clínicas. Agende uma conversa para entender como podemos complementar seu excelente trabalho.</p>
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20an%C3%A1lise%20gratuita%20para%20a%20pr%C3%A1tica%20do%20Dr.%20Tadeu%20Coelho." target="_blank" class="btn">Agendar uma Análise Gratuita</a>
-        </div>
-    </section>
+        <section id="agencia">
+            <div class="container">
+                <h2 class="section-title">Quem somos e por que confiamos em dados</h2>
+                <div class="agencia-content">
+                    <p>Eu sou Lucas Olimpio, fundador da Agência Datta. Com mais de 4 anos de experiência, nossa missão é transformar investimentos em mídia paga em resultados mensuráveis. Acreditamos que a clareza sobre os dados é a chave para campanhas que realmente funcionam, e é isso que oferecemos aos nossos clientes.</p>
+                    <div class="agencia-highlights">
+                        <div class="highlight-item">💰 Mais de R$ 10 milhões em verba gerenciada</div>
+                        <div class="highlight-item">🤝 Mais de 50 empresas atendidas</div>
+                        <div class="highlight-item">🏆 Rastreamento de excelência no mercado</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-cta">
+            <div class="container">
+                <h2>Vamos conversar sobre como preencher sua agenda com pacientes qualificados?</h2>
+                <p class="apoio">Agende um rápido bate-papo sem compromisso para explorarmos como a Agência Datta pode ajudar a otimizar sua captação de pacientes no Ceará.</p>
+                <a href="https://api.whatsapp.com/send?phone=5524998151011&text=Ol%C3%A1%2C%20Ag%C3%AAncia%20Datta!%20Tenho%20interesse%20em%20conversar%20sobre%20como%20atrair%20mais%20pacientes%20para%20minha%20cl%C3%ADnica." target="_blank" class="btn">Agendar minha conversa agora</a>
+                <p class="contact-info">
+                    Ou entre em contato direto:
+                    <a href="mailto:contato@agenciadatta.com.br">contato@agenciadatta.com.br</a> |
+                    <a href="https://api.whatsapp.com/send?phone=5524998151011" target="_blank">WhatsApp: +55 24 99815-1011</a>
+                </p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Agência Datta. Todos os direitos reservados. Desenvolvido com foco em resultados.</p>
+            <p>&copy; 2024 Agência Datta. Todos os direitos reservados. CNPJ: 45.535.063/0001-80</p>
         </div>
     </footer>
+
+    <script>
+        // Simple Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            // Ensure hero is animated immediately if it's visible on load
+            document.querySelector('#hero').classList.add('animated');
+        });
+    </script>
 </body>
 </html>
