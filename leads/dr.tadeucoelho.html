@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -41,7 +40,7 @@
             padding: 0 24px;
         }
 
-        /* 💡 ANIMATIONS 💡 */
+        /* ─── ANIMATIONS ─── */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -54,14 +53,16 @@
             from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
-        .animate { animation: fadeUp 0.7s ease-out both; }
+        .animate {
+            animation: fadeUp 0.7s ease-out both;
+        }
         .animate-delay-1 { animation-delay: 0.1s; }
         .animate-delay-2 { animation-delay: 0.2s; }
         .animate-delay-3 { animation-delay: 0.3s; }
         .animate-delay-4 { animation-delay: 0.4s; }
         .animate-delay-5 { animation-delay: 0.5s; }
 
-        /* 💡 HEADER 💡 */
+        /* ─── HEADER ─── */
         .header {
             background: var(--verde-escuro);
             padding: 16px 0;
@@ -101,16 +102,13 @@
         }
         .header nav a:hover { color: var(--branco); }
 
-        /* 💡 HERO 💡 */
+        /* ─── HERO ─── */
         .hero {
             background: var(--verde-escuro);
             padding: 100px 0 120px;
             position: relative;
             overflow: hidden;
-            text-align: center; /* Adicionado para centralizar conteúdo */
-            display: flex; /* Adicionado para centralizar verticalmente */
-            align-items: center; /* Adicionado para centralizar verticalmente */
-            justify-content: center; /* Adicionado para centralizar horizontalmente */
+            text-align: center;
         }
         .hero::before {
             content: '';
@@ -144,9 +142,6 @@
             color: rgba(255,255,255,0.45);
             margin-bottom: 24px;
             animation: fadeIn 0.6s ease-out both;
-            max-width: 600px; /* Adicionado para controle de largura */
-            margin-left: auto; /* Adicionado para centralizar */
-            margin-right: auto; /* Adicionado para centralizar */
         }
         .hero h1 {
             font-family: 'DM Serif Display', serif;
@@ -157,12 +152,12 @@
             margin-bottom: 28px;
             max-width: 720px;
             animation: fadeUp 0.7s ease-out 0.15s both;
-            margin-left: auto; /* Adicionado para centralizar */
-            margin-right: auto; /* Adicionado para centralizar */
+            margin-left: auto;
+            margin-right: auto;
         }
         .hero h1 em {
-            font-style: normal; /* Removido itálico do template para a copy */
-            color: rgba(255,255,255,0.85); /* Mantido cor levemente diferente */
+            font-style: italic;
+            color: rgba(255,255,255,0.55);
         }
         .hero-desc {
             font-size: 17px;
@@ -170,8 +165,8 @@
             line-height: 1.7;
             max-width: 540px;
             animation: fadeUp 0.7s ease-out 0.3s both;
-            margin-left: auto; /* Adicionado para centralizar */
-            margin-right: auto; /* Adicionado para centralizar */
+            margin-left: auto;
+            margin-right: auto;
         }
         .hero-line {
             width: 60px;
@@ -180,11 +175,11 @@
             margin-top: 40px;
             border-radius: 2px;
             animation: fadeUp 0.7s ease-out 0.45s both;
-            margin-left: auto; /* Adicionado para centralizar */
-            margin-right: auto; /* Adicionado para centralizar */
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* 💡 SECTIONS 💡 */
+        /* ─── SECTIONS ─── */
         .section { padding: 90px 0; }
 
         .section-label {
@@ -209,26 +204,22 @@
             line-height: 1.7;
             max-width: 560px;
             margin-bottom: 48px;
-            margin-left: auto; /* Adicionado para centralizar */
-            margin-right: auto; /* Adicionado para centralizar */
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* 💡 OPORTUNIDADE (Principal) 💡 */
-        .diagnostico { /* Renomeado de .oportunidade */
+        /* ─── OPORTUNIDADE (Principal) ─── */
+        .oportunidade {
             background: var(--fundo-claro);
             border-top: 1px solid var(--borda-sutil);
             border-bottom: 1px solid var(--borda-sutil);
         }
-
-        /* Adaptado para grid de cards */
-        .oportunidade-cards-grid {
+        .oportunidade-cards-grid { /* Novo estilo para grid de cards */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
             margin-top: 48px;
-            text-align: left;
         }
-
         .oportunidade-card {
             background: var(--branco);
             border-radius: 16px;
@@ -236,10 +227,8 @@
             border: 1px solid var(--borda-sutil);
             position: relative;
             overflow: hidden;
-            transition: transform 0.0s ease-out, box-shadow 0.3s ease-out; /* Transição reduzida */
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
         }
         .oportunidade-card::before {
             content: '';
@@ -286,14 +275,14 @@
             color: var(--verde-medio);
         }
 
-        /* 💡 PONTOS DE ATENÇÃO (Opportunities) 💡 */
-        .oportunidades { /* Renomeado de .pontos-atencao */
+        /* ─── PONTOS DE ATENÇÃO ─── */
+        .pontos-atencao {
             background: var(--verde-escuro);
             color: var(--branco);
         }
-        .oportunidades .section-label { color: rgba(255,255,255,0.35); }
-        .oportunidades .section-heading { color: var(--branco); }
-        .oportunidades .section-subtitle { color: rgba(255,255,255,0.4); }
+        .pontos-atencao .section-label { color: rgba(255,255,255,0.35); }
+        .pontos-atencao .section-heading { color: var(--branco); }
+        .pontos-atencao .section-subtitle { color: rgba(255,255,255,0.4); }
 
         .pontos-grid {
             display: grid;
@@ -308,9 +297,7 @@
             border-radius: 16px;
             padding: 36px;
             transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            text-align: left;
         }
         .ponto-card:hover {
             background: rgba(255,255,255,0.06);
@@ -345,8 +332,8 @@
         }
         .ponto-card p:last-child { margin-bottom: 0; }
 
-        /* 💡 SUGESTÕES DE MELHORIAS (Services) 💡 */
-        .servicos { /* Renomeado de .sugestoes */
+        /* ─── SUGESTÕES ─── */
+        .sugestoes {
             background: var(--fundo-claro);
             border-top: 1px solid var(--borda-sutil);
             border-bottom: 1px solid var(--borda-sutil);
@@ -400,18 +387,17 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
             color: var(--verde-escuro);
-            margin-bottom: 0;
         }
         .sugestao-item p {
             font-size: 15px;
             line-height: 1.8;
             color: rgba(50,50,50,0.65);
             margin-bottom: 10px;
-            padding-left: 34px; /* Ajuste para alinhar com o texto do template */
+            padding-left: 34px;
         }
         .sugestao-item p:last-child { margin-bottom: 0; }
 
-        /* 💡 CONSULTORIA CTA 💡 */
+        /* ─── CONSULTORIA CTA ─── */
         .consultoria {
             background: var(--verde-medio);
             color: var(--branco);
@@ -472,11 +458,11 @@
             box-shadow: 0 12px 32px rgba(0,0,0,0.2);
         }
 
-        /* 💡 SOBRE NÓS 💡 */
+        /* ─── SOBRE NÓS ─── */
         .sobre-nos {
             background: var(--verde-escuro);
             color: var(--branco);
-            padding: 90px 0; /* Ajuste para consistência com outras seções */
+            padding: 90px 0;
         }
         .sobre-nos .container {
             display: grid;
@@ -541,7 +527,7 @@
             color: var(--branco);
         }
 
-        /* 💡 FOOTER 💡 */
+        /* ─── FOOTER ─── */
         .footer {
             background: #050a03;
             padding: 36px 0;
@@ -569,16 +555,19 @@
         }
         .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
-        /* 💡 RESPONSIVE 💡 */
+        /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
             .section { padding: 64px 0; }
+
             .hero { padding: 64px 0 80px; }
             .hero h1 { font-size: 32px; }
+
             .header nav { display: none; }
 
-            .pontos-grid { grid-template-columns: 1fr; }
             .oportunidade-cards-grid { grid-template-columns: 1fr; }
             .oportunidade-card { padding: 32px 24px; }
+
+            .pontos-grid { grid-template-columns: 1fr; }
 
             .sugestao-item { padding: 28px 24px 28px 36px; }
             .sugestao-item p { padding-left: 0; }
@@ -609,7 +598,7 @@
                 <ul>
                     <li><a href="https://agenciadatta.com.br/servicos/">Serviços</a></li>
                     <li><a href="https://agenciadatta.com.br/dashboards/">Dashboards</a></li>
-                    <li><a href="https://agenciadatta.com.br/rastreamento/">Rastreamento</a></li>
+                    <li><a href="https://agenciadatta.com.br/traqueamento/">Rastreamento</a></li>
                     <li><a href="https://wa.me/5524998151011">Contato</a></li>
                 </ul>
             </nav>
@@ -619,15 +608,15 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <p class="hero-label">Analisamos seu perfil e identificamos oportunidades claras para expandir seu alcance e atrair novos pacientes.</p>
-            <h1 class="animate">Dr. Tadeu Coelho, como atrair mais pacientes qualificados para sua clínica no Ceará?</h1>
+            <p class="hero-label animate">Analisamos seu perfil e identificamos oportunidades claras para expandir seu alcance e atrair novos pacientes.</p>
+            <h1 class="animate animate-delay-1">Dr. Tadeu Coelho, como atrair mais pacientes qualificados para sua clínica no Ceará?</h1>
             <p class="hero-desc animate animate-delay-2">Transforme sua presença digital em agendamentos consistentemente para Fortaleza, Juazeiro do Norte e Cascavel.</p>
             <div class="hero-line animate animate-delay-3"></div>
         </div>
     </section>
 
     <!-- DIAGNOSTICO -->
-    <section class="section diagnostico">
+    <section class="section oportunidade">
         <div class="container">
             <p class="section-label animate">Análise Detalhada</p>
             <h2 class="section-heading animate animate-delay-1">Análise Personalizada do Seu Perfil Digital</h2>
@@ -649,12 +638,12 @@
                     <h3>Atendimento Abrangente no Ceará</h3>
                     <p>Sua atuação em Fortaleza, Juazeiro do Norte e Cascavel indica uma capilaridade importante. Isso abre portas para estratégias segmentadas de atração de pacientes em cada região.</p>
                 </div>
-                <div class="oportunidade-card animate animate-delay-1" style="animation-delay: 0.6s;">
+                <div class="oportunidade-card animate" style="animation-delay: 0.6s;">
                     <div class="oportunidade-icon">✨</div>
                     <h3>Serviços de Valor e Facilidade</h3>
                     <p>A oferta de telemedicina, agendamentos via WhatsApp e o auxílio no reembolso médico adicionam um diferencial competitivo valioso, facilitando o acesso e a jornada do paciente.</p>
                 </div>
-                <div class="oportunidade-card animate animate-delay-2" style="animation-delay: 0.7s;">
+                <div class="oportunidade-card animate" style="animation-delay: 0.7s;">
                     <div class="oportunidade-icon">⚙️</div>
                     <h3>Maturidade Digital e Otimização em Curso</h3>
                     <p>A existência de uma página de links e o desenvolvimento por uma consultoria de marketing para médicos mostram seu investimento em uma presença digital estruturada.</p>
@@ -664,7 +653,7 @@
     </section>
 
     <!-- OPORTUNIDADES -->
-    <section class="section oportunidades">
+    <section class="section pontos-atencao">
         <div class="container">
             <p class="section-label animate">Onde Atrair</p>
             <h2 class="section-heading animate animate-delay-1">Onde podemos atrair mais pacientes para você</h2>
@@ -672,15 +661,17 @@
 
             <div class="pontos-grid">
                 <div class="ponto-card animate animate-delay-3">
-                    <div class="ponto-card-icon">🎯</div>
+                    <div class="ponto-card-icon">🚀</div>
                     <h3>Otimizar a Jornada do Paciente para Agendamentos</h3>
                     <p>Sua página de links é um excelente ponto de partida. Podemos otimizá-la com funis de conversão mais diretos, direcionando os pacientes para o serviço exato que procuram com menos fricção.</p>
                 </div>
+
                 <div class="ponto-card animate animate-delay-4">
                     <div class="ponto-card-icon">🗺️</div>
                     <h3>Expandir a Captação Ativa nas Suas Cidades</h3>
                     <p>Implementar campanhas de tráfego pago geolocalizadas permitirá que seus serviços alcancem especificamente as pessoas em Fortaleza, Juazeiro do Norte e Cascavel que precisam de sua especialidade.</p>
                 </div>
+
                 <div class="ponto-card animate animate-delay-5">
                     <div class="ponto-card-icon">💬</div>
                     <h3>Transformar Interesse do Instagram em Consultas</h3>
@@ -691,7 +682,7 @@
     </section>
 
     <!-- SERVICOS -->
-    <section class="section servicos">
+    <section class="section sugestoes">
         <div class="container">
             <p class="section-label animate">Nossas Soluções</p>
             <h2 class="section-heading animate animate-delay-1">Nossas soluções para sua prática médica</h2>
@@ -700,11 +691,12 @@
             <div class="sugestoes-list">
                 <div class="sugestao-item animate animate-delay-3">
                     <div class="sugestao-header">
-                        <span class="sugestao-emoji">📈</span>
+                        <span class="sugestao-emoji">📊</span>
                         <h3>Tráfego Pago Estratégico e Localizado</h3>
                     </div>
                     <p>Criamos e gerenciamos campanhas de anúncios focadas em atrair novos pacientes nas cidades de Fortaleza, Juazeiro do Norte e Cascavel, segmentando por interesse e necessidade.</p>
                 </div>
+
                 <div class="sugestao-item animate animate-delay-4">
                     <div class="sugestao-header">
                         <span class="sugestao-emoji">💻</span>
@@ -712,6 +704,7 @@
                     </div>
                     <p>Desenvolvemos páginas de destino otimizadas e específicas para cada um dos seus serviços (telemedicina, reembolso, agendamentos), garantindo uma experiência clara e que gera mais conversões.</p>
                 </div>
+
                 <div class="sugestao-item animate animate-delay-5">
                     <div class="sugestao-header">
                         <span class="sugestao-emoji">🔎</span>
@@ -723,17 +716,18 @@
         </div>
     </section>
 
-    <!-- CONSULTORIA CTA (INTOCÁVEL) -->
+    <!-- CONSULTORIA CTA -->
     <section class="consultoria">
         <div class="container">
-            <h2>Vamos conversar sobre como preencher sua agenda com pacientes qualificados?</h2>
-            <p>Agende um rápido bate-papo sem compromisso para explorarmos como a Agência Datta pode ajudar a otimizar sua captação de pacientes no Ceará.</p>
-            <a href="https://wa.me/5524998151011" class="btn-cta">Agendar minha conversa agora</a>
-            <p style="margin-top: 24px; font-size: 14px;">Ou entre em contato diretamente: <a href="mailto:contato@agenciadatta.com.br" style="color: var(--branco); text-decoration: underline;">contato@agenciadatta.com.br</a> | WhatsApp: <a href="https://wa.me/5524998151011" target="_blank" style="color: var(--branco); text-decoration: underline;">+55 24 99815-1011</a></p>
+            <h2>Consultoria<em>Gratuita</em></h2>
+            <p>Obrigado por sua atenção!</p>
+            <p>Gostaria de oferecer a você uma <strong>consultoria gratuita</strong> para te ajudar a aplicar essas melhorias e mostrar soluções que vão te ajudar a captar mais pacientes e automatizar seu atendimento.</p>
+            <p>Para agendar, basta clicar abaixo ou responder no Instagram.</p>
+            <a href="https://agenciadatta.com.br/agenda/" class="btn-cta">Agendar Consultoria</a>
         </div>
     </section>
 
-    <!-- SOBRE NÓS (INTOCÁVEL) -->
+    <!-- SOBRE NÓS -->
     <section class="section sobre-nos">
         <div class="container">
             <div>
@@ -741,7 +735,7 @@
                 <h2>Agência Datta</h2>
                 <p>Especialistas em Tráfego Pago e Rastreamento Avançado, impulsionando negócios com estratégias orientadas por dados.</p>
                 <p>Fundada em 2021 por Lucas Olimpio, gestor de tráfego e analista de dados, a Datta já entregou resultados expressivos para mais de 50 empresas.</p>
-                <a href="https://agenciadatta.com.br/servicos/" class="btn-outline">Conhecer mais ➔</a>
+                <a href="https://agenciadatta.com.br/servicos/" class="btn-outline">Conhecer mais →</a>
             </div>
             <div class="sobre-stats">
                 <div class="stat-item">
@@ -764,7 +758,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (INTOCÁVEL) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <span class="footer-brand">Datta © 2025</span>
@@ -780,4 +774,3 @@
 
 </body>
 </html>
-```
