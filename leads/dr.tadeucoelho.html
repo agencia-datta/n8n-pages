@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Tadeu Coelho - Análise Agência Datta</title>
+    <title>Dr. Tadeu Coelho - Agência Datta</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* CSS Reset & Variables */
         :root {
-            /* Agência Datta Palette */
-            --primary-color: #00392F; /* Main brand green - used for buttons, accents, highlights */
-            --secondary-color: #091105; /* Very dark green/black - used for backgrounds, strong titles */
-            --accent-color: #004D3F; /* A slightly lighter shade of primary for hover states */
-            --text-color: #323232; /* General body text color */
-            --white-color: #FFFFFF; /* White - for text on dark backgrounds, card backgrounds */
+            /* Mapeamento da paleta Agência Datta */
+            --color-dark-green: #091105; /* Cor principal de fundo escuro, títulos */
+            --color-teal-green: #00392F; /* Cor de destaque, botões, links, ícones */
+            --color-gray-text: #323232; /* Cor geral do texto */
+            --color-white: #FFFFFF; /* Branco */
+            --color-light-gray: #f8f8f8; /* Cor de fundo de seções claras alternadas */
 
-            /* Template Defaults (neutrals and background) */
-            --background-color: #f9f9f9; /* Light background for alternating sections */
-            --light-grey: #f0f0f0; /* Another light grey for cards, etc. */
-            --dark-grey: #666; /* Slightly lighter grey for secondary text */
-            --border-color: #eee;
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --font-family-primary: 'Inter', sans-serif;
 
-            --heading-font: 'Poppins', sans-serif;
-            --body-font: 'Inter', sans-serif;
-            --border-radius: 8px;
-            --spacing-unit: 16px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 48px;
+            --spacing-xl: 96px;
+
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --box-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -37,300 +38,249 @@
         }
 
         body {
-            font-family: var(--body-font);
-            color: var(--text-color);
+            font-family: var(--font-family-primary);
             line-height: 1.6;
-            background-color: var(--background-color);
+            color: var(--color-gray-text);
+            background-color: var(--color-light-gray);
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--heading-font);
-            color: var(--secondary-color);
-            margin-bottom: var(--spacing-unit);
-            line-height: 1.2;
-        }
-
-        p {
-            margin-bottom: var(--spacing-unit);
-        }
-
         a {
-            color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            color: var(--color-teal-green);
         }
 
-        a:hover {
-            color: var(--accent-color);
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
+        /* Utility Classes */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: calc(2 * var(--spacing-unit)) var(--spacing-unit);
-        }
-
-        .section {
-            padding: calc(4 * var(--spacing-unit)) 0;
-            text-align: center;
-        }
-
-        .section:nth-of-type(even) {
-            background-color: var(--white-color);
+            padding: var(--spacing-md);
         }
 
         .section-title {
-            font-size: 2.5em;
-            margin-bottom: calc(2 * var(--spacing-unit));
-            position: relative;
-            display: inline-block;
+            font-size: 2.2em;
+            color: var(--color-dark-green);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 700;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
+        .text-center {
+            text-align: center;
         }
 
         /* Buttons */
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            padding: 14px 28px;
-            border-radius: var(--border-radius);
-            font-weight: 600;
+            background-color: var(--color-teal-green);
+            color: var(--color-white);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-md);
             font-size: 1.1em;
+            font-weight: 600;
             transition: background-color 0.3s ease, transform 0.2s ease;
             border: none;
             cursor: pointer;
-            text-align: center;
         }
 
         .btn:hover {
-            background-color: var(--accent-color);
+            background-color: #002e26; /* Slightly darker teal for hover */
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-            color: var(--white-color);
-            padding: calc(6 * var(--spacing-unit)) 0;
+            background-color: var(--color-dark-green);
+            color: var(--color-white);
+            padding: var(--spacing-xl) var(--spacing-md);
             text-align: center;
-            overflow: hidden;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>') repeat;
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-profile-pic {
+        .hero__profile-pic {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 4px solid var(--white-color);
             object-fit: cover;
-            margin-bottom: calc(2 * var(--spacing-unit));
-            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1);
+            border: 4px solid var(--color-teal-green);
+            margin-bottom: var(--spacing-md);
             animation: fadeIn 1s ease-out forwards;
         }
 
-        .hero h1 {
-            font-size: 3.2em;
-            color: var(--white-color);
-            margin-bottom: var(--spacing-unit);
+        .hero__headline {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
             animation: slideInUp 1s ease-out forwards;
             animation-delay: 0.2s;
             opacity: 0;
         }
 
-        .hero p.subtitle {
-            font-size: 1.5em;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: calc(2 * var(--spacing-unit));
+        .hero__subtitle {
+            font-size: 1.4em;
+            font-weight: 400;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+            max-width: 800px;
             animation: slideInUp 1s ease-out forwards;
             animation-delay: 0.4s;
             opacity: 0;
         }
 
-        .hero p.support-text {
+        .hero__support-text {
             font-size: 1.1em;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
-            margin: 0 auto calc(3 * var(--spacing-unit));
+            opacity: 0.8;
+            max-width: 700px;
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 0.6s;
             opacity: 0;
         }
 
-        /* Card Grid Sections (Diagnóstico, Oportunidades, Serviços) */
-        .card-grid {
+        /* General Section Styling */
+        .section {
+            padding: var(--spacing-xl) var(--spacing-md);
+            background-color: var(--color-white);
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:nth-of-type(even) {
+            background-color: var(--color-light-gray);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: calc(2 * var(--spacing-unit));
-            margin-top: calc(3 * var(--spacing-unit));
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
         }
 
         .card {
-            background-color: var(--light-grey);
-            border-radius: var(--border-radius);
-            padding: calc(2 * var(--spacing-unit));
-            text-align: left;
-            box-shadow: 0 4px 12px var(--shadow-color);
+            background-color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow-sm);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
             animation: slideUp 0.6s ease-out forwards;
             opacity: 0;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--box-shadow-md);
         }
 
-        .card-icon {
-            font-size: 2.5em;
-            margin-bottom: var(--spacing-unit);
-            color: var(--primary-color);
-            line-height: 1;
+        .card__icon {
+            font-size: 2em;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-teal-green); /* Aplicado para garantir cor, embora emojis tenham sua própria */
         }
 
-        .card h3 {
-            font-size: 1.4em;
-            margin-bottom: calc(0.5 * var(--spacing-unit));
-            color: var(--secondary-color);
+        .card__title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--color-dark-green);
+            margin-bottom: var(--spacing-xs);
         }
 
-        .card p {
-            font-size: 0.95em;
-            color: var(--dark-grey);
-            flex-grow: 1; /* Ensures cards with less content maintain height in flex */
-            margin-bottom: 0;
-        }
-        
-        /* Agency Section */
-        .agency-section {
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            padding: calc(6 * var(--spacing-unit)) 0;
+        .card__description {
+            font-size: 1em;
+            color: var(--color-gray-text);
         }
 
-        .agency-section .section-title {
-            color: var(--white-color);
-        }
-        .agency-section .section-title::after {
-            background-color: var(--accent-color);
-        }
-
-        .agency-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: calc(4 * var(--spacing-unit));
-            text-align: left;
-            max-width: 1000px;
-            margin: calc(4 * var(--spacing-unit)) auto 0;
+        /* About Us Section (Agência) */
+        .about-us {
+            background-color: var(--color-dark-green);
+            color: var(--color-white);
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
         }
 
-        .agency-text {
-            flex: 2;
-            min-width: 300px;
+        .about-us .section-title {
+            color: var(--color-white);
+        }
+
+        .about-us__content {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg) auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            opacity: 0.9;
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 0.2s;
             opacity: 0;
         }
 
-        .agency-text h3 {
-            color: var(--white-color);
-            font-size: 1.8em;
-            margin-bottom: var(--spacing-unit);
-        }
-
-        .agency-text p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: var(--spacing-unit);
-        }
-
-        .agency-highlights {
-            flex: 1;
-            min-width: 200px;
+        .about-us__highlights {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            max-width: 600px;
+            margin: 0 auto;
             list-style: none;
             padding: 0;
+            text-align: center;
             animation: slideInRight 1s ease-out forwards;
             animation-delay: 0.4s;
             opacity: 0;
         }
 
-        .agency-highlights li {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-left: 4px solid var(--accent-color);
-            padding: var(--spacing-unit) calc(1.5 * var(--spacing-unit));
-            margin-bottom: var(--spacing-unit);
-            border-radius: var(--border-radius);
-            font-weight: 600;
+        .about-us__highlight-item {
+            background-color: var(--color-teal-green);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-md);
             font-size: 1.1em;
-            color: var(--white-color);
+            font-weight: 500;
+            transition: background-color 0.3s ease;
             display: flex;
             align-items: center;
-            gap: calc(0.5 * var(--spacing-unit));
-        }
-        .agency-highlights li:last-child {
-            margin-bottom: 0;
-        }
-        .agency-highlights li span {
-            font-size: 1.2em; /* Emoji size */
+            justify-content: center; /* Center content */
+            gap: var(--spacing-xs);
         }
 
-        /* CTA Section */
-        .cta-section {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            padding: calc(6 * var(--spacing-unit)) 0;
+        .about-us__highlight-item:hover {
+            background-color: #002e26;
+        }
+
+
+        /* CTA Section (Consultoria) */
+        .cta {
+            background-color: var(--color-white);
+            padding: var(--spacing-xl) var(--spacing-md);
             text-align: center;
+            border-top: 1px solid #eee;
         }
 
-        .cta-section h2 {
-            font-size: 2.8em;
-            color: var(--white-color);
-            margin-bottom: calc(1.5 * var(--spacing-unit));
+        .cta__headline {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--color-dark-green);
+            margin-bottom: var(--spacing-md);
             animation: slideInUp 1s ease-out forwards;
             opacity: 0;
         }
 
-        .cta-section p {
+        .cta__support-text {
             font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: calc(3 * var(--spacing-unit));
-            max-width: 700px;
+            color: var(--color-gray-text);
+            margin-bottom: var(--spacing-lg);
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             animation: fadeIn 1s ease-out forwards;
@@ -338,34 +288,36 @@
             opacity: 0;
         }
 
-        .cta-section .btn {
-            background-color: var(--accent-color);
+        .cta__button-wrapper {
             animation: pulse 1.5s infinite, fadeIn 1s ease-out forwards;
             animation-delay: 0.4s;
             opacity: 0;
         }
-        .cta-section .btn:hover {
-            background-color: var(--white-color);
-            color: var(--primary-color);
-        }
 
-        .contact-info {
-            margin-top: calc(4 * var(--spacing-unit));
-            font-size: 1em;
-            color: rgba(255, 255, 255, 0.7);
+        .cta__contact-info {
+            margin-top: var(--spacing-lg);
+            font-size: 1.1em;
+            color: var(--color-gray-text);
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 0.6s;
             opacity: 0;
         }
-
-        .contact-info a {
-            color: var(--white-color);
-            margin: 0 calc(0.5 * var(--spacing-unit));
-            transition: color 0.3s ease;
+        .cta__contact-info a {
+            color: var(--color-teal-green);
+            font-weight: 500;
+        }
+        .cta__contact-info a:hover {
+            text-decoration: underline;
         }
 
-        .contact-info a:hover {
-            color: var(--accent-color);
+        /* Footer */
+        .footer {
+            background-color: var(--color-dark-green);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            text-align: center;
+            font-size: 0.9em;
+            opacity: 0.8;
         }
 
         /* Animations */
@@ -395,210 +347,162 @@
             100% { transform: scale(1); }
         }
 
-        /* Responsive Adjustments */
-        @media (max-width: 900px) {
-            .hero h1 {
-                font-size: 2.5em;
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .hero__headline {
+                font-size: 3.5em;
             }
-            .hero p.subtitle {
-                font-size: 1.2em;
+
+            .hero__subtitle {
+                font-size: 1.7em;
             }
-            .agency-content {
-                flex-direction: column;
-                text-align: center;
-                gap: calc(2 * var(--spacing-unit));
+
+            .section-title {
+                font-size: 2.8em;
             }
-            .agency-highlights {
-                width: 100%;
-                max-width: 400px;
-                margin: auto;
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-us__highlights {
+                flex-direction: row;
+                justify-content: center;
+                gap: var(--spacing-md);
             }
         }
 
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2em;
-            }
-            .hero {
-                padding: calc(4 * var(--spacing-unit)) 0;
-            }
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .hero p.subtitle {
-                font-size: 1.1em;
-            }
-            .card-grid {
-                grid-template-columns: 1fr;
+        @media (min-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             .card {
-                padding: var(--spacing-unit);
+                padding: var(--spacing-lg);
             }
-            .cta-section h2 {
+            .card__icon {
+                font-size: 2.5em;
+            }
+            .hero__headline {
+                font-size: 4em;
+            }
+            .hero__subtitle {
                 font-size: 2em;
-            }
-            .cta-section p {
-                font-size: 1em;
-            }
-            .btn {
-                padding: 12px 24px;
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: calc(1.5 * var(--spacing-unit)) var(--spacing-unit);
-            }
-            .section {
-                padding: calc(2 * var(--spacing-unit)) 0;
-            }
-            .hero h1 {
-                font-size: 1.8em;
-            }
-            .hero p.subtitle {
-                font-size: 1em;
-            }
-            .hero-profile-pic {
-                width: 90px;
-                height: 90px;
-            }
-            .card-icon {
-                font-size: 2em;
-            }
-            .card h3 {
-                font-size: 1.2em;
-            }
-            .card p {
-                font-size: 0.9em;
-            }
-            .agency-highlights li {
-                font-size: 1em;
-            }
-            .cta-section h2 {
-                font-size: 1.8em;
             }
         }
     </style>
 </head>
 <body>
     <header class="hero">
+        <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/332380102_1363218881178470_5888591058616329849_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gFZkPIh6aHOh9vSPgh6XIo4E_HBlBUdbfrF1EynfDcx-O9T_9xS8IEQ5vsDra-CjWQ&_nc_ohc=st7kO0B98w4Q7kNvwEsVxsV&_nc_gid=6OsDC5nlxdaemccJmWYgNw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0DSEtIo1GHuPsYo9XSp26AvqyIpQkQ0TzyIOQx8pqlvw&oe=69DD4A2C&_nc_sid=8b3546" alt="Foto de Perfil Dr. Tadeu Coelho" class="hero__profile-pic">
         <div class="container">
-            <div class="hero-content">
-                <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/332380102_1363218881178470_5888591058616329849_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gFZkPIh6aHOh9vSPgh6XIo4E_HBlBUdbfrF1EynfDcx-O9T_9xS8IEQ5vsDra-CjWQ&_nc_ohc=st7kO0B98w4Q7kNvwEsVxsV&_nc_gid=6OsDC5nlxdaemccJmWYgNw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0DSEtIo1GHuPsYo9XSp26AvqyIpQkQ0TzyIOQx8pqlvw&oe=69DD4A2C&_nc_sid=8b3546" alt="Foto de perfil Dr. Tadeu Coelho" class="hero-profile-pic">
-                <h1>Dr. Tadeu Coelho, como atrair mais pacientes qualificados para sua clínica no Ceará?</h1>
-                <p class="subtitle">Transforme sua presença digital em agendamentos consistentes para Fortaleza, Juazeiro do Norte e Cascavel.</p>
-                <p class="support-text">Analisamos seu perfil e identificamos oportunidades claras para expandir seu alcance e atrair novos pacientes.</p>
-            </div>
+            <h1 class="hero__headline">Dr. Tadeu Coelho, como atrair mais pacientes qualificados para sua clínica no Ceará?</h1>
+            <p class="hero__subtitle">Transforme sua presença digital em agendamentos consistentes para Fortaleza, Juazeiro do Norte e Cascavel.</p>
+            <p class="hero__support-text">Analisamos seu perfil e identificamos oportunidades claras para expandir seu alcance e atrair novos pacientes.</p>
         </div>
     </header>
 
     <main>
-        <section id="diagnostico" class="section">
+        <section class="section diagnostico">
             <div class="container">
                 <h2 class="section-title">Análise Personalizada do Seu Perfil Digital</h2>
-                <div class="card-grid">
+                <div class="cards-grid">
                     <div class="card" style="animation-delay: 0.1s;">
-                        <span class="card-icon">✅</span>
-                        <h3>Forte Presença e Autoridade Médica</h3>
-                        <p>Sua conta @dr.tadeucoelho, verificada no Instagram e com a credencial CRM-CE 15821, demonstra a solidez de sua atuação como médico especialista em saúde hormonal, emagrecimento, lipedema e sarcopenia.</p>
+                        <span class="card__icon" role="img" aria-label="Marca de seleção">✅</span>
+                        <h3 class="card__title">Forte Presença e Autoridade Médica</h3>
+                        <p class="card__description">Sua conta @dr.tadeucoelho, verificada no Instagram e com a credencial CRM-CE 15821, demonstra a solidez de sua atuação como médico especialista em saúde hormonal, emagrecimento, lipedema e sarcopenia.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.2s;">
-                        <span class="card-icon">📈</span>
-                        <h3>Audiência Ativa no Instagram</h3>
-                        <p>Com mais de 30.121 seguidores no Instagram, você construiu uma base significativa de interessados em seus conteúdos e serviços, representando um grande potencial de conversão.</p>
+                        <span class="card__icon" role="img" aria-label="Gráfico de linha subindo">📈</span>
+                        <h3 class="card__title">Audiência Ativa no Instagram</h3>
+                        <p class="card__description">Com mais de 30.121 seguidores no Instagram, você construiu uma base significativa de interessados em seus conteúdos e serviços, representando um grande potencial de conversão.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.3s;">
-                        <span class="card-icon">📍</span>
-                        <h3>Atendimento Abrangente no Ceará</h3>
-                        <p>Sua atuação em Fortaleza, Juazeiro do Norte e Cascavel indica uma capilaridade importante. Isso abre portas para estratégias segmentadas de atração de pacientes em cada região.</p>
+                        <span class="card__icon" role="img" aria-label="Alfinete de mapa">📍</span>
+                        <h3 class="card__title">Atendimento Abrangente no Ceará</h3>
+                        <p class="card__description">Sua atuação em Fortaleza, Juazeiro do Norte e Cascavel indica uma capilaridade importante. Isso abre portas para estratégias segmentadas de atração de pacientes em cada região.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.4s;">
-                        <span class="card-icon">✨</span>
-                        <h3>Serviços de Valor e Facilidade</h3>
-                        <p>A oferta de telemedicina, agendamentos via WhatsApp e o auxílio no reembolso médico adicionam um diferencial competitivo valioso, facilitando o acesso e a jornada do paciente.</p>
+                        <span class="card__icon" role="img" aria-label="Faíscas">✨</span>
+                        <h3 class="card__title">Serviços de Valor e Facilidade</h3>
+                        <p class="card__description">A oferta de telemedicina, agendamentos via WhatsApp e o auxílio no reembolso médico adicionam um diferencial competitivo valioso, facilitando o acesso e a jornada do paciente.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.5s;">
-                        <span class="card-icon">⚙️</span>
-                        <h3>Maturidade Digital e Otimização em Curso</h3>
-                        <p>A existência de uma página de links e o desenvolvimento por uma consultoria de marketing para médicos mostram seu investimento em uma presença digital estruturada.</p>
+                        <span class="card__icon" role="img" aria-label="Engrenagem">⚙️</span>
+                        <h3 class="card__title">Maturidade Digital e Otimização em Curso</h3>
+                        <p class="card__description">A existência de uma página de links e o desenvolvimento por uma consultoria de marketing para médicos mostram seu investimento em uma presença digital estruturada.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="oportunidades" class="section">
+        <section class="section oportunidades">
             <div class="container">
                 <h2 class="section-title">Onde podemos atrair mais pacientes para você</h2>
-                <div class="card-grid">
+                <div class="cards-grid">
                     <div class="card" style="animation-delay: 0.1s;">
-                        <span class="card-icon">🚀</span>
-                        <h3>Otimizar a Jornada do Paciente para Agendamentos</h3>
-                        <p>Sua página de links é um excelente ponto de partida. Podemos otimizá-la com funis de conversão mais diretos, direcionando os pacientes para o serviço exato que procuram com menos fricção.</p>
+                        <span class="card__icon" role="img" aria-label="Foguete">🚀</span>
+                        <h3 class="card__title">Otimizar a Jornada do Paciente para Agendamentos</h3>
+                        <p class="card__description">Sua página de links é um excelente ponto de partida. Podemos otimizá-la com funis de conversão mais diretos, direcionando os pacientes para o serviço exato que procuram com menos fricção.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.2s;">
-                        <span class="card-icon">🗺️</span>
-                        <h3>Expandir a Captação Ativa nas Suas Cidades</h3>
-                        <p>Implementar campanhas de tráfego pago geolocalizadas permitirá que seus serviços alcancem especificamente as pessoas em Fortaleza, Juazeiro do Norte e Cascavel que precisam de sua especialidade.</p>
+                        <span class="card__icon" role="img" aria-label="Mapa-múndi">🗺️</span>
+                        <h3 class="card__title">Expandir a Captação Ativa nas Suas Cidades</h3>
+                        <p class="card__description">Implementar campanhas de tráfego pago geolocalizadas permitirá que seus serviços alcancem especificamente as pessoas em Fortaleza, Juazeiro do Norte e Cascavel que precisam de sua especialidade.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.3s;">
-                        <span class="card-icon">💖</span>
-                        <h3>Transformar Interesse do Instagram em Consultas</h3>
-                        <p>Com a sua audiência qualificada, podemos criar estratégias que direcionam esse engajamento para agendamentos efetivos, convertendo seguidores em pacientes de forma mais previsível.</p>
+                        <span class="card__icon" role="img" aria-label="Coração">💖</span>
+                        <h3 class="card__title">Transformar Interesse do Instagram em Consultas</h3>
+                        <p class="card__description">Com a sua audiência qualificada, podemos criar estratégias que direcionam esse engajamento para agendamentos efetivos, convertendo seguidores em pacientes de forma mais previsível.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="servicos" class="section">
+        <section class="section solucoes">
             <div class="container">
                 <h2 class="section-title">Nossas soluções para sua prática médica</h2>
-                <div class="card-grid">
+                <div class="cards-grid">
                     <div class="card" style="animation-delay: 0.1s;">
-                        <span class="card-icon">📊</span>
-                        <h3>Tráfego Pago Estratégico e Localizado</h3>
-                        <p>Criamos e gerenciamos campanhas de anúncios focadas em atrair novos pacientes nas cidades de Fortaleza, Juazeiro do Norte e Cascavel, segmentando por interesse e necessidade.</p>
+                        <span class="card__icon" role="img" aria-label="Gráfico de barras">📊</span>
+                        <h3 class="card__title">Tráfego Pago Estratégico e Localizado</h3>
+                        <p class="card__description">Criamos e gerenciamos campanhas de anúncios focadas em atrair novos pacientes nas cidades de Fortaleza, Juazeiro do Norte e Cascavel, segmentando por interesse e necessidade.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.2s;">
-                        <span class="card-icon">💡</span>
-                        <h3>Otimização de Páginas de Captura (Landing Pages)</h3>
-                        <p>Desenvolvemos páginas de destino otimizadas e específicas para cada um dos seus serviços (telemedicina, reembolso, agendamentos), garantindo uma experiência clara e que gera mais conversões.</p>
+                        <span class="card__icon" role="img" aria-label="Lâmpada">💡</span>
+                        <h3 class="card__title">Otimização de Páginas de Captura (Landing Pages)</h3>
+                        <p class="card__description">Desenvolvemos páginas de destino otimizadas e específicas para cada um dos seus serviços (telemedicina, reembolso, agendamentos), garantindo uma experiência clara e que gera mais conversões.</p>
                     </div>
                     <div class="card" style="animation-delay: 0.3s;">
-                        <span class="card-icon">🔎</span>
-                        <h3>Rastreamento Avançado de Dados</h3>
-                        <p>Implementamos um sistema de rastreamento robusto para que você saiba exatamente de onde cada paciente veio e qual o retorno sobre o investimento de cada campanha digital.</p>
+                        <span class="card__icon" role="img" aria-label="Lupa">🔎</span>
+                        <h3 class="card__title">Rastreamento Avançado de Dados</h3>
+                        <p class="card__description">Implementamos um sistema de rastreamento robusto para que você saiba exatamente de onde cada paciente veio e qual o retorno sobre o investimento de cada campanha digital.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="agencia" class="section agency-section">
+        <section class="about-us">
             <div class="container">
                 <h2 class="section-title">Quem somos e por que confiamos em dados</h2>
-                <div class="agency-content">
-                    <div class="agency-text">
-                        <h3>Lucas Olimpio, Fundador da Agência Datta</h3>
-                        <p>Eu sou Lucas Olimpio, fundador da Agência Datta. Com mais de 4 anos de experiência, nossa missão é transformar investimentos em mídia paga em resultados mensuráveis. Acreditamos que a clareza sobre os dados é a chave para campanhas que realmente funcionam, e é isso que oferecemos aos nossos clientes.</p>
-                    </div>
-                    <ul class="agency-highlights">
-                        <li><span>💰</span> Mais de R$ 10 milhões em verba gerenciada</li>
-                        <li><span>🤝</span> Mais de 50 empresas atendidas</li>
-                        <li><span>✨</span> Rastreamento de excelência no mercado</li>
-                    </ul>
-                </div>
+                <p class="about-us__content">
+                    Eu sou Lucas Olimpio, fundador da Agência Datta. Com mais de 4 anos de experiência, nossa missão é transformar investimentos em mídia paga em resultados mensuráveis. Acreditamos que a clareza sobre os dados é a chave para campanhas que realmente funcionam, e é isso que oferecemos aos nossos clientes.
+                </p>
+                <ul class="about-us__highlights">
+                    <li class="about-us__highlight-item">💰 Mais de R$ 10 milhões em verba gerenciada</li>
+                    <li class="about-us__highlight-item">🤝 Mais de 50 empresas atendidas</li>
+                    <li class="about-us__highlight-item">✨ Rastreamento de excelência no mercado</li>
+                </ul>
             </div>
         </section>
 
-        <section id="cta" class="section cta-section">
+        <section class="cta">
             <div class="container">
-                <h2>Vamos conversar sobre como preencher sua agenda com pacientes qualificados?</h2>
-                <p>Agende um rápido bate-papo sem compromisso para explorarmos como a Agência Datta pode ajudar a otimizar sua captação de pacientes no Ceará.</p>
-                <a href="https://wa.me/5524998151011" target="_blank" class="btn">Agendar minha conversa agora</a>
-                <p class="contact-info">
-                    <a href="mailto:contato@agenciadatta.com.br">contato@agenciadatta.com.br</a> | 
-                    <a href="https://wa.me/5524998151011" target="_blank">WhatsApp: +55 24 99815-1011</a>
-                </p>
+                <h2 class="cta__headline">Vamos conversar sobre como preencher sua agenda com pacientes qualificados?</h2>
+                <p class="cta__support-text">Agende um rápido bate-papo sem compromisso para explorarmos como a Agência Datta pode ajudar a otimizar sua captação de pacientes no Ceará.</p>
+                <div class="cta__button-wrapper">
+                    <a href="https://wa.me/5524998151011" class="btn" target="_blank" rel="noopener noreferrer">Agendar minha conversa agora</a>
+                </div>
+                <p class="cta__contact-info">Ou entre em contato diretamente: <a href="mailto:contato@agenciadatta.com.br">contato@agenciadatta.com.br</a> | WhatsApp: <a href="https://wa.me/5524998151011" target="_blank" rel="noopener noreferrer">+55 24 99815-1011</a></p>
             </div>
         </section>
     </main>
