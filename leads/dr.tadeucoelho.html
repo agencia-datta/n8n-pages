@@ -3,420 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agência Datta - Prospecção Dr. Tadeu Coelho</title>
+    <title>Dr. Tadeu Coelho - Análise Agência Datta</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-dark-green: #091105;
-            --color-medium-green: #00392F;
-            --color-dark-grey: #323232;
-            --color-white: #FFFFFF;
+            /* Agência Datta Palette */
+            --primary-color: #00392F; /* Main brand green - used for buttons, accents, highlights */
+            --secondary-color: #091105; /* Very dark green/black - used for backgrounds, strong titles */
+            --accent-color: #004D3F; /* A slightly lighter shade of primary for hover states */
+            --text-color: #323232; /* General body text color */
+            --white-color: #FFFFFF; /* White - for text on dark backgrounds, card backgrounds */
+
+            /* Template Defaults (neutrals and background) */
+            --background-color: #f9f9f9; /* Light background for alternating sections */
+            --light-grey: #f0f0f0; /* Another light grey for cards, etc. */
+            --dark-grey: #666; /* Slightly lighter grey for secondary text */
+            --border-color: #eee;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Inter', sans-serif;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
         }
 
-        /* Base Reset & Typography */
+        /* Base Styles */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--body-font);
+            color: var(--text-color);
             line-height: 1.6;
-            color: var(--color-dark-grey);
-            background-color: var(--color-white);
+            background-color: var(--background-color);
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            color: var(--color-dark-green);
-            font-weight: 700;
+            font-family: var(--heading-font);
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-unit);
             line-height: 1.2;
-            margin-bottom: 0.5em;
         }
 
-        h1 { font-size: 2.5em; }
-        h2 { font-size: 2em; }
-        h3 { font-size: 1.5em; }
-        p { margin-bottom: 1em; }
+        p {
+            margin-bottom: var(--spacing-unit);
+        }
 
         a {
-            color: var(--color-medium-green);
+            color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         a:hover {
-            color: var(--color-dark-green);
+            color: var(--accent-color);
         }
 
-        /* Utility Classes */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: calc(2 * var(--spacing-unit)) var(--spacing-unit);
         }
 
-        .text-center { text-align: center; }
-        .text-white { color: var(--color-white); }
-        .bg-dark-green { background-color: var(--color-dark-green); }
-        .bg-medium-green { background-color: var(--color-medium-green); }
-        .bg-white { background-color: var(--color-white); }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background-color: var(--color-medium-green);
-            color: var(--color-white);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: var(--color-dark-green);
-            transform: translateY(-2px);
+        .section {
+            padding: calc(4 * var(--spacing-unit)) 0;
+            text-align: center;
         }
 
-        /* Sections */
-        section {
-            padding: 4rem 0;
-            opacity: 0; /* For fade-in animation */
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        section.animated {
-            opacity: 1;
-            transform: translateY(0);
+        .section:nth-of-type(even) {
+            background-color: var(--white-color);
         }
 
         .section-title {
-            font-size: 2.2em;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--color-dark-green);
+            font-size: 2.5em;
+            margin-bottom: calc(2 * var(--spacing-unit));
             position: relative;
-            padding-bottom: 0.5rem;
+            display: inline-block;
         }
+
         .section-title::after {
             content: '';
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: -10px;
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background-color: var(--color-medium-green);
+            background-color: var(--primary-color);
             border-radius: 2px;
         }
 
-        /* Header */
-        header {
-            background-color: var(--color-dark-green);
-            padding: 1rem 0;
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 14px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .header-logo {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: var(--color-white);
-        }
-        .header-contact .btn {
-            padding: 0.75rem 1.5rem;
-            font-size: 0.9em;
         }
 
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
 
         /* Hero Section */
-        #hero {
-            background-color: var(--color-dark-green);
-            color: var(--color-white);
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--white-color);
+            padding: calc(6 * var(--spacing-unit)) 0;
             text-align: center;
-            padding: 6rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80vh;
-            position: relative;
             overflow: hidden;
+            position: relative;
         }
-        #hero::before {
+
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0, 57, 47, 0.7) 0%, rgba(9, 17, 5, 0.7) 100%);
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>') repeat;
+            opacity: 0.2;
             z-index: 0;
         }
-        .hero-content {
+
+        .hero .container {
             position: relative;
             z-index: 1;
+        }
+
+        .hero-content {
             max-width: 800px;
+            margin: 0 auto;
         }
-        #hero h1 {
-            font-size: 3em;
-            margin-bottom: 0.5rem;
-            color: var(--color-white);
-            animation: fadeInDown 1s ease-out;
-        }
-        #hero .subtitulo {
-            font-size: 1.5em;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            animation: fadeInUp 1s ease-out 0.3s forwards;
-            opacity: 0;
-        }
-        #hero .apoio {
-            font-size: 1.1em;
-            margin-bottom: 2.5rem;
-            color: rgba(255, 255, 255, 0.8);
-            animation: fadeInUp 1s ease-out 0.6s forwards;
-            opacity: 0;
-        }
-        #hero .btn {
-            animation: bounceIn 1s ease-out 0.9s forwards;
-            opacity: 0;
-        }
-        .dr-profile-pic {
+
+        .hero-profile-pic {
             width: 120px;
             height: 120px;
             border-radius: 50%;
+            border: 4px solid var(--white-color);
             object-fit: cover;
-            border: 4px solid var(--color-medium-green);
-            margin-bottom: 1.5rem;
-            animation: zoomIn 1s ease-out;
+            margin-bottom: calc(2 * var(--spacing-unit));
+            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out forwards;
         }
 
-        /* Diagnostico & Oportunidades */
-        .grid-container {
+        .hero h1 {
+            font-size: 3.2em;
+            color: var(--white-color);
+            margin-bottom: var(--spacing-unit);
+            animation: slideInUp 1s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: calc(2 * var(--spacing-unit));
+            animation: slideInUp 1s ease-out forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .hero p.support-text {
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto calc(3 * var(--spacing-unit));
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+
+        /* Card Grid Sections (Diagnóstico, Oportunidades, Serviços) */
+        .card-grid {
             display: grid;
-            gap: 2rem;
-            grid-template-columns: 1fr; /* Mobile first */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(2 * var(--spacing-unit));
+            margin-top: calc(3 * var(--spacing-unit));
         }
+
         .card {
-            background-color: var(--color-white);
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            padding: 2rem;
+            background-color: var(--light-grey);
+            border-radius: var(--border-radius);
+            padding: calc(2 * var(--spacing-unit));
             text-align: left;
+            box-shadow: 0 4px 12px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
         }
+
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
+
         .card-icon {
             font-size: 2.5em;
-            margin-bottom: 0.8rem;
-            color: var(--color-medium-green);
-            display: block;
-        }
-        .card h3 {
-            color: var(--color-dark-green);
-            font-size: 1.3em;
-            margin-bottom: 0.6rem;
-        }
-        .card p {
-            color: var(--color-dark-grey);
-            font-size: 0.95em;
+            margin-bottom: var(--spacing-unit);
+            color: var(--primary-color);
+            line-height: 1;
         }
 
-        /* Agencia Section */
-        #agencia {
-            background-color: rgba(0, 57, 47, 0.05); /* Lighter medium green */
-            text-align: center;
+        .card h3 {
+            font-size: 1.4em;
+            margin-bottom: calc(0.5 * var(--spacing-unit));
+            color: var(--secondary-color);
         }
-        .agencia-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: var(--color-white);
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+        .card p {
+            font-size: 0.95em;
+            color: var(--dark-grey);
+            flex-grow: 1; /* Ensures cards with less content maintain height in flex */
+            margin-bottom: 0;
         }
-        #agencia .section-title {
-            margin-bottom: 2rem;
+        
+        /* Agency Section */
+        .agency-section {
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: calc(6 * var(--spacing-unit)) 0;
         }
-        #agencia p {
-            font-size: 1.1em;
-            margin-bottom: 2rem;
+
+        .agency-section .section-title {
+            color: var(--white-color);
         }
-        .agencia-highlights {
+        .agency-section .section-title::after {
+            background-color: var(--accent-color);
+        }
+
+        .agency-content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .highlight-item {
-            background-color: var(--color-medium-green);
-            color: var(--color-white);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.95em;
-            flex-grow: 1;
-            max-width: 280px;
-        }
-        .highlight-item:last-child {
-            background-color: var(--color-dark-green); /* Differentiate one highlight */
+            align-items: center;
+            gap: calc(4 * var(--spacing-unit));
+            text-align: left;
+            max-width: 1000px;
+            margin: calc(4 * var(--spacing-unit)) auto 0;
         }
 
-        /* Final CTA Section */
-        #final-cta {
-            background-color: var(--color-dark-green);
-            color: var(--color-white);
+        .agency-text {
+            flex: 2;
+            min-width: 300px;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .agency-text h3 {
+            color: var(--white-color);
+            font-size: 1.8em;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .agency-text p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .agency-highlights {
+            flex: 1;
+            min-width: 200px;
+            list-style: none;
+            padding: 0;
+            animation: slideInRight 1s ease-out forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .agency-highlights li {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: var(--spacing-unit) calc(1.5 * var(--spacing-unit));
+            margin-bottom: var(--spacing-unit);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1em;
+            color: var(--white-color);
+            display: flex;
+            align-items: center;
+            gap: calc(0.5 * var(--spacing-unit));
+        }
+        .agency-highlights li:last-child {
+            margin-bottom: 0;
+        }
+        .agency-highlights li span {
+            font-size: 1.2em; /* Emoji size */
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: calc(6 * var(--spacing-unit)) 0;
             text-align: center;
-            padding: 5rem 0;
         }
-        #final-cta h2 {
-            font-size: 2.5em;
-            color: var(--color-white);
-            margin-bottom: 1rem;
+
+        .cta-section h2 {
+            font-size: 2.8em;
+            color: var(--white-color);
+            margin-bottom: calc(1.5 * var(--spacing-unit));
+            animation: slideInUp 1s ease-out forwards;
+            opacity: 0;
         }
-        #final-cta .apoio {
+
+        .cta-section p {
             font-size: 1.2em;
-            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: calc(3 * var(--spacing-unit));
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        #final-cta .contact-info {
-            margin-top: 2rem;
-            font-size: 1em;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        #final-cta .contact-info a {
-            color: var(--color-white);
-            font-weight: 500;
-            margin: 0 0.5rem;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--color-dark-green);
+        .cta-section .btn {
+            background-color: var(--accent-color);
+            animation: pulse 1.5s infinite, fadeIn 1s ease-out forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+        .cta-section .btn:hover {
+            background-color: var(--white-color);
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            margin-top: calc(4 * var(--spacing-unit));
+            font-size: 1em;
             color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            padding: 2rem 0;
-            font-size: 0.9em;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+
+        .contact-info a {
+            color: var(--white-color);
+            margin: 0 calc(0.5 * var(--spacing-unit));
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
         }
 
         /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
+
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3); }
-            50% { opacity: 1; transform: scale(1.05); }
-            70% { transform: scale(0.9); }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
             100% { transform: scale(1); }
         }
 
-        /* Responsive Design */
-        @media (min-width: 768px) {
-            h1 { font-size: 3.5em; }
-            h2 { font-size: 2.5em; }
-            h3 { font-size: 1.8em; }
-            
-            #hero h1 { font-size: 4em; }
-            #hero .subtitulo { font-size: 1.8em; }
-
-            .grid-container {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.5em;
             }
-
-            .section-title {
-                font-size: 2.8em;
+            .hero p.subtitle {
+                font-size: 1.2em;
             }
-            .agencia-highlights {
-                gap: 2rem;
+            .agency-content {
+                flex-direction: column;
+                text-align: center;
+                gap: calc(2 * var(--spacing-unit));
             }
-            .highlight-item {
-                flex-grow: 0; /* Prevent overstretching on large screens */
+            .agency-highlights {
+                width: 100%;
+                max-width: 400px;
+                margin: auto;
             }
         }
 
-        @media (min-width: 1024px) {
-            h1 { font-size: 4.5em; }
-            #hero h1 { font-size: 5em; }
-            #hero .subtitulo { font-size: 2em; }
-            .section-title { font-size: 3em; }
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2em;
+            }
+            .hero {
+                padding: calc(4 * var(--spacing-unit)) 0;
+            }
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .hero p.subtitle {
+                font-size: 1.1em;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                padding: var(--spacing-unit);
+            }
+            .cta-section h2 {
+                font-size: 2em;
+            }
+            .cta-section p {
+                font-size: 1em;
+            }
+            .btn {
+                padding: 12px 24px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: calc(1.5 * var(--spacing-unit)) var(--spacing-unit);
+            }
+            .section {
+                padding: calc(2 * var(--spacing-unit)) 0;
+            }
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            .hero p.subtitle {
+                font-size: 1em;
+            }
+            .hero-profile-pic {
+                width: 90px;
+                height: 90px;
+            }
+            .card-icon {
+                font-size: 2em;
+            }
+            .card h3 {
+                font-size: 1.2em;
+            }
+            .card p {
+                font-size: 0.9em;
+            }
+            .agency-highlights li {
+                font-size: 1em;
+            }
+            .cta-section h2 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-logo">Agência Datta</div>
-            <a href="#final-cta" class="btn">Agende uma Conversa</a>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/332380102_1363218881178470_5888591058616329849_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gFZkPIh6aHOh9vSPgh6XIo4E_HBlBUdbfrF1EynfDcx-O9T_9xS8IEQ5vsDra-CjWQ&_nc_ohc=st7kO0B98w4Q7kNvwEsVxsV&_nc_gid=6OsDC5nlxdaemccJmWYgNw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0DSEtIo1GHuPsYo9XSp26AvqyIpQkQ0TzyIOQx8pqlvw&oe=69DD4A2C&_nc_sid=8b3546" alt="Foto de perfil Dr. Tadeu Coelho" class="hero-profile-pic">
+                <h1>Dr. Tadeu Coelho, como atrair mais pacientes qualificados para sua clínica no Ceará?</h1>
+                <p class="subtitle">Transforme sua presença digital em agendamentos consistentes para Fortaleza, Juazeiro do Norte e Cascavel.</p>
+                <p class="support-text">Analisamos seu perfil e identificamos oportunidades claras para expandir seu alcance e atrair novos pacientes.</p>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="animated">
-            <div class="hero-content">
-                <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/332380102_1363218881178470_5888591058616329849_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gFZkPIh6aHOh9vSPgh6XIo4E_HBlBUdbfrF1EynfDcx-O9T_9xS8IEQ5vsDra-CjWQ&_nc_ohc=st7kO0B98w4Q7kNvwEsVxsV&_nc_gid=6OsDC5nlxdaemccJmWYgNw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0DSEtIo1GHuPsYo9XSp26AvqyIpQkQ0TzyIOQx8pqlvw&oe=69DD4A2C&_nc_sid=8b3546" alt="Dr. Tadeu Coelho" class="dr-profile-pic">
-                <h1>Dr. Tadeu Coelho, como atrair mais pacientes qualificados para sua clínica no Ceará?</h1>
-                <p class="subtitulo">Transforme sua presença digital em agendamentos consistentes para Fortaleza, Juazeiro do Norte e Cascavel.</p>
-                <p class="apoio">Analisamos seu perfil e identificamos oportunidades claras para expandir seu alcance e atrair novos pacientes.</p>
-                <a href="#final-cta" class="btn">Agendar minha conversa agora</a>
-            </div>
-        </section>
-
-        <section id="diagnostico">
+        <section id="diagnostico" class="section">
             <div class="container">
                 <h2 class="section-title">Análise Personalizada do Seu Perfil Digital</h2>
-                <div class="grid-container">
-                    <div class="card">
-                        <span class="card-icon">🩺</span>
+                <div class="card-grid">
+                    <div class="card" style="animation-delay: 0.1s;">
+                        <span class="card-icon">✅</span>
                         <h3>Forte Presença e Autoridade Médica</h3>
                         <p>Sua conta @dr.tadeucoelho, verificada no Instagram e com a credencial CRM-CE 15821, demonstra a solidez de sua atuação como médico especialista em saúde hormonal, emagrecimento, lipedema e sarcopenia.</p>
                     </div>
-                    <div class="card">
+                    <div class="card" style="animation-delay: 0.2s;">
                         <span class="card-icon">📈</span>
                         <h3>Audiência Ativa no Instagram</h3>
                         <p>Com mais de 30.121 seguidores no Instagram, você construiu uma base significativa de interessados em seus conteúdos e serviços, representando um grande potencial de conversão.</p>
                     </div>
-                    <div class="card">
+                    <div class="card" style="animation-delay: 0.3s;">
                         <span class="card-icon">📍</span>
                         <h3>Atendimento Abrangente no Ceará</h3>
                         <p>Sua atuação em Fortaleza, Juazeiro do Norte e Cascavel indica uma capilaridade importante. Isso abre portas para estratégias segmentadas de atração de pacientes em cada região.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">⭐</span>
+                    <div class="card" style="animation-delay: 0.4s;">
+                        <span class="card-icon">✨</span>
                         <h3>Serviços de Valor e Facilidade</h3>
                         <p>A oferta de telemedicina, agendamentos via WhatsApp e o auxílio no reembolso médico adicionam um diferencial competitivo valioso, facilitando o acesso e a jornada do paciente.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">💡</span>
+                    <div class="card" style="animation-delay: 0.5s;">
+                        <span class="card-icon">⚙️</span>
                         <h3>Maturidade Digital e Otimização em Curso</h3>
                         <p>A existência de uma página de links e o desenvolvimento por uma consultoria de marketing para médicos mostram seu investimento em uma presença digital estruturada.</p>
                     </div>
@@ -424,22 +527,22 @@
             </div>
         </section>
 
-        <section id="oportunidades" class="bg-dark-green">
+        <section id="oportunidades" class="section">
             <div class="container">
-                <h2 class="section-title text-white">Onde podemos atrair mais pacientes para você</h2>
-                <div class="grid-container">
-                    <div class="card">
-                        <span class="card-icon">🎯</span>
+                <h2 class="section-title">Onde podemos atrair mais pacientes para você</h2>
+                <div class="card-grid">
+                    <div class="card" style="animation-delay: 0.1s;">
+                        <span class="card-icon">🚀</span>
                         <h3>Otimizar a Jornada do Paciente para Agendamentos</h3>
                         <p>Sua página de links é um excelente ponto de partida. Podemos otimizá-la com funis de conversão mais diretos, direcionando os pacientes para o serviço exato que procuram com menos fricção.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">🚀</span>
+                    <div class="card" style="animation-delay: 0.2s;">
+                        <span class="card-icon">🗺️</span>
                         <h3>Expandir a Captação Ativa nas Suas Cidades</h3>
                         <p>Implementar campanhas de tráfego pago geolocalizadas permitirá que seus serviços alcancem especificamente as pessoas em Fortaleza, Juazeiro do Norte e Cascavel que precisam de sua especialidade.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">✅</span>
+                    <div class="card" style="animation-delay: 0.3s;">
+                        <span class="card-icon">💖</span>
                         <h3>Transformar Interesse do Instagram em Consultas</h3>
                         <p>Com a sua audiência qualificada, podemos criar estratégias que direcionam esse engajamento para agendamentos efetivos, convertendo seguidores em pacientes de forma mais previsível.</p>
                     </div>
@@ -447,22 +550,22 @@
             </div>
         </section>
 
-        <section id="servicos">
+        <section id="servicos" class="section">
             <div class="container">
                 <h2 class="section-title">Nossas soluções para sua prática médica</h2>
-                <div class="grid-container">
-                    <div class="card">
-                        <span class="card-icon">🌐</span>
+                <div class="card-grid">
+                    <div class="card" style="animation-delay: 0.1s;">
+                        <span class="card-icon">📊</span>
                         <h3>Tráfego Pago Estratégico e Localizado</h3>
                         <p>Criamos e gerenciamos campanhas de anúncios focadas em atrair novos pacientes nas cidades de Fortaleza, Juazeiro do Norte e Cascavel, segmentando por interesse e necessidade.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">📄</span>
+                    <div class="card" style="animation-delay: 0.2s;">
+                        <span class="card-icon">💡</span>
                         <h3>Otimização de Páginas de Captura (Landing Pages)</h3>
                         <p>Desenvolvemos páginas de destino otimizadas e específicas para cada um dos seus serviços (telemedicina, reembolso, agendamentos), garantindo uma experiência clara e que gera mais conversões.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">📊</span>
+                    <div class="card" style="animation-delay: 0.3s;">
+                        <span class="card-icon">🔎</span>
                         <h3>Rastreamento Avançado de Dados</h3>
                         <p>Implementamos um sistema de rastreamento robusto para que você saiba exatamente de onde cada paciente veio e qual o retorno sobre o investimento de cada campanha digital.</p>
                     </div>
@@ -470,66 +573,40 @@
             </div>
         </section>
 
-        <section id="agencia">
+        <section id="agencia" class="section agency-section">
             <div class="container">
                 <h2 class="section-title">Quem somos e por que confiamos em dados</h2>
-                <div class="agencia-content">
-                    <p>Eu sou Lucas Olimpio, fundador da Agência Datta. Com mais de 4 anos de experiência, nossa missão é transformar investimentos em mídia paga em resultados mensuráveis. Acreditamos que a clareza sobre os dados é a chave para campanhas que realmente funcionam, e é isso que oferecemos aos nossos clientes.</p>
-                    <div class="agencia-highlights">
-                        <div class="highlight-item">💰 Mais de R$ 10 milhões em verba gerenciada</div>
-                        <div class="highlight-item">🤝 Mais de 50 empresas atendidas</div>
-                        <div class="highlight-item">🏆 Rastreamento de excelência no mercado</div>
+                <div class="agency-content">
+                    <div class="agency-text">
+                        <h3>Lucas Olimpio, Fundador da Agência Datta</h3>
+                        <p>Eu sou Lucas Olimpio, fundador da Agência Datta. Com mais de 4 anos de experiência, nossa missão é transformar investimentos em mídia paga em resultados mensuráveis. Acreditamos que a clareza sobre os dados é a chave para campanhas que realmente funcionam, e é isso que oferecemos aos nossos clientes.</p>
                     </div>
+                    <ul class="agency-highlights">
+                        <li><span>💰</span> Mais de R$ 10 milhões em verba gerenciada</li>
+                        <li><span>🤝</span> Mais de 50 empresas atendidas</li>
+                        <li><span>✨</span> Rastreamento de excelência no mercado</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="final-cta">
+        <section id="cta" class="section cta-section">
             <div class="container">
                 <h2>Vamos conversar sobre como preencher sua agenda com pacientes qualificados?</h2>
-                <p class="apoio">Agende um rápido bate-papo sem compromisso para explorarmos como a Agência Datta pode ajudar a otimizar sua captação de pacientes no Ceará.</p>
-                <a href="https://api.whatsapp.com/send?phone=5524998151011&text=Ol%C3%A1%2C%20Ag%C3%AAncia%20Datta!%20Tenho%20interesse%20em%20conversar%20sobre%20como%20atrair%20mais%20pacientes%20para%20minha%20cl%C3%ADnica." target="_blank" class="btn">Agendar minha conversa agora</a>
+                <p>Agende um rápido bate-papo sem compromisso para explorarmos como a Agência Datta pode ajudar a otimizar sua captação de pacientes no Ceará.</p>
+                <a href="https://wa.me/5524998151011" target="_blank" class="btn">Agendar minha conversa agora</a>
                 <p class="contact-info">
-                    Ou entre em contato direto:
-                    <a href="mailto:contato@agenciadatta.com.br">contato@agenciadatta.com.br</a> |
-                    <a href="https://api.whatsapp.com/send?phone=5524998151011" target="_blank">WhatsApp: +55 24 99815-1011</a>
+                    <a href="mailto:contato@agenciadatta.com.br">contato@agenciadatta.com.br</a> | 
+                    <a href="https://wa.me/5524998151011" target="_blank">WhatsApp: +55 24 99815-1011</a>
                 </p>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Agência Datta. Todos os direitos reservados. CNPJ: 45.535.063/0001-80</p>
+            <p>&copy; 2023 Agência Datta. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script>
-        // Simple Intersection Observer for fade-in animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-            // Ensure hero is animated immediately if it's visible on load
-            document.querySelector('#hero').classList.add('animated');
-        });
-    </script>
 </body>
 </html>
