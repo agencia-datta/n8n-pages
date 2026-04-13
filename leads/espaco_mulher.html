@@ -523,73 +523,6 @@
         }
         .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
-        /* Custom CTA Final Section styles */
-        .cta-final {
-            text-align: center;
-            background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-escuro) 100%);
-            color: var(--branco);
-            padding: 80px 0;
-            border-radius: 16px;
-            margin: 0 auto;
-            max-width: 1080px;
-            margin-top: 60px;
-            box-shadow: 0 16px 48px rgba(0,0,0,0.2);
-        }
-
-        .cta-final .container {
-            max-width: 720px;
-        }
-
-        .cta-final .section-heading {
-            color: var(--branco);
-            margin-bottom: 20px;
-            font-size: clamp(28px, 4vw, 38px);
-        }
-
-        .cta-final .section-subtitle {
-            color: rgba(255,255,255,0.8);
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 24px;
-            max-width: 100%;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--branco);
-            color: var(--verde-escuro);
-            padding: 18px 48px;
-            border-radius: 60px;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            margin-top: 36px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-        }
-
-        .cta-small-print {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
-            margin-top: 24px;
-        }
-
-        .cta-small-print a {
-            color: var(--branco);
-            text-decoration: underline;
-            transition: opacity 0.3s ease;
-        }
-
-        .cta-small-print a:hover {
-            opacity: 0.8;
-        }
-
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
             .section { padding: 64px 0; }
@@ -616,25 +549,6 @@
                 gap: 16px;
                 text-align: center;
             }
-
-            .cta-final {
-                margin-top: 40px;
-                padding: 60px 24px;
-                border-radius: 8px;
-            }
-
-            .cta-final .section-heading {
-                font-size: 26px;
-            }
-
-            .cta-final .section-subtitle {
-                font-size: 15px;
-            }
-
-            .cta-button {
-                padding: 16px 36px;
-                font-size: 14px;
-            }
         }
     </style>
 </head>
@@ -657,108 +571,97 @@
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <p class="hero-label">Análise personalizada</p>
-            <h1 class="animate">Análise de Estrutura<br>de <em>Marketing Digital</em></h1>
-            <p class="hero-desc animate animate-delay-2">Fizemos essa análise com o intuito de mapear oportunidades e pontos de melhoria para o seu negócio, o <strong>Espaço Mulher</strong>.</p>
-            <div class="hero-line animate animate-delay-3"></div>
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <p class="hero-label">Análise personalizada</p>
+        <h1 class="animate">Análise de Estrutura<br>de <em>Marketing</em></h1>
+        <p class="hero-desc animate animate-delay-2">Fizemos essa análise com o intuito de mapear oportunidades e pontos de melhoria para o seu negócio, o Espaço Mulher.</p>
+        <div class="hero-line animate animate-delay-3"></div>
+    </div>
+</section>
+
+<!-- PRINCIPAL OPORTUNIDADE -->
+<section class="section oportunidade">
+    <div class="container">
+        <p class="section-label animate">Principal</p>
+        <h2 class="section-heading animate animate-delay-1">Oportunidade</h2>
+        <p class="section-subtitle animate animate-delay-2">Identificamos o ponto com maior potencial de impacto para o seu negócio, o Espaço Mulher.</p>
+
+        <div class="oportunidade-card animate animate-delay-3">
+            <div class="oportunidade-icon">🔍</div>
+            <h3>Ranking de Pesquisas no Google</h3>
+            <p>Segundo dados da própria Google, cerca de <span class="highlight-stat">40% das pessoas</span> que pesquisam no Google clicam no 1º resultado de sua pesquisa.</p>
+            <p>Ao pesquisar "academia feminina [sua cidade]" ou "aulas para mulheres [sua cidade]" — pesquisas chave para pessoas que buscam um espaço como o seu —, não encontramos o seu site entre os primeiros resultados, e nem mesmo na primeira página.</p>
+            <p>Quem pesquisa por uma academia ou modalidades específicas no Google já está pronta para se matricular ou agendar uma aula experimental, porém o Espaço Mulher não está aparecendo para essas pessoas no momento decisivo.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- PRINCIPAL OPORTUNIDADE -->
-    <section class="section oportunidade">
-        <div class="container">
-            <p class="section-label animate">Principal</p>
-            <h2 class="section-heading animate animate-delay-1">Oportunidade</h2>
-            <p class="section-subtitle animate animate-delay-2">Identificamos o ponto com maior potencial de impacto para o seu negócio.</p>
+<!-- PONTOS DE ATENÇÃO -->
+<section class="section pontos-atencao">
+    <div class="container">
+        <p class="section-label">Pontos de</p>
+        <h2 class="section-heading">Atenção</h2>
+        <p class="section-subtitle">Aspectos que merecem atenção para fortalecer a presença digital do Espaço Mulher.</p>
 
-            <div class="oportunidade-card animate animate-delay-3">
-                <div class="oportunidade-icon">📈</div>
-                <h3>Visibilidade em Pesquisas Locais no Google</h3>
-                <p>Segundo dados da própria Google, cerca de <span class="highlight-stat">40% das pessoas</span> que pesquisam no Google clicam no 1º resultado de sua pesquisa.</p>
-                <p>Ao pesquisar por termos como "academia Petrópolis", "fitness feminino Petrópolis" ou "musculação para mulheres" — pesquisas cruciais para quem busca um espaço como o seu — não encontramos o <strong>Espaço Mulher</strong> entre os primeiros resultados, e nem mesmo na primeira página.</p>
-                <p>Muitas mulheres já estão prontas para começar a treinar ou buscar um novo espaço fitness, mas não estão encontrando o seu negócio quando pesquisam ativamente. Isso representa uma grande oportunidade de atrair novas alunas!</p>
+        <div class="pontos-grid">
+            <div class="ponto-card">
+                <div class="ponto-card-icon">📍</div>
+                <h3>Google Meu Negócio</h3>
+                <p>Na mesma pesquisa por academias femininas na região, olhamos os perfis em destaque do Google Meu Negócio e, embora o perfil do Espaço Mulher esteja cadastrado, ele não aparece entre as principais recomendações.</p>
+                <p>O perfil existe e tem informações básicas, mas não está otimizado para se destacar na busca local, onde muitas mulheres procuram um espaço para treinar perto de casa ou do trabalho.</p>
+            </div>
+
+            <div class="ponto-card">
+                <div class="ponto-card-icon">📱</div>
+                <h3>Pesquisas no Instagram</h3>
+                <p>Pesquisando por termos como "academia [sua cidade]", "fitness feminino [sua cidade]" ou "treino para mulheres [sua cidade]" no Instagram, não encontramos o perfil do Espaço Mulher, mesmo já tendo interagido com ele.</p>
+                <p>Muitos dos perfis encontrados possuem o termo "academia" ou "fitness" no nome. Isso é essencial para ser encontrado no Instagram por conta do padrão de pesquisa da ferramenta e para atrair novas seguidoras.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- PONTOS DE ATENÇÃO -->
-    <section class="section pontos-atencao">
-        <div class="container">
-            <p class="section-label">Pontos de</p>
-            <h2 class="section-heading">Atenção</h2>
-            <p class="section-subtitle">Aspectos que merecem atenção para fortalecer sua presença digital e atrair mais alunas.</p>
+<!-- SUGESTÕES DE MELHORIAS -->
+<section class="section sugestoes">
+    <div class="container">
+        <p class="section-label">Sugestões de</p>
+        <h2 class="section-heading">Melhorias</h2>
+        <p class="section-subtitle">Ações práticas que o Espaço Mulher pode implementar para atrair mais alunas e melhorar seus resultados.</p>
 
-            <div class="pontos-grid">
-                <div class="ponto-card">
-                    <div class="ponto-card-icon">📍</div>
-                    <h3>Otimização do Google Meu Negócio</h3>
-                    <p>Ao pesquisar por "Espaço Mulher Petrópolis", encontramos seu perfil no Google Meu Negócio. Ele está ativo, o que é ótimo! No entanto, na pesquisa por termos genéricos como "academia Petrópolis", ele não aparece entre as principais recomendações do mapa.</p>
-                    <p>Isso indica que, apesar de ter um perfil, ele pode não estar totalmente otimizado para ser encontrado por novas alunas que não conhecem seu nome, mas buscam um serviço na sua região.</p>
+        <div class="sugestoes-list">
+            <div class="sugestao-item">
+                <div class="sugestao-header">
+                    <span class="sugestao-emoji">🔍</span>
+                    <h3>Pesquisa Google</h3>
                 </div>
+                <p>O site do Espaço Mulher tem potencial, mas ainda é pouco recomendado pelo Google para buscas ativas. A melhor solução para aumentar a visibilidade e atrair novas alunas são os <strong>anúncios online (Tráfego Pago)</strong>.</p>
+                <p>Com o <strong>Tráfego Pago da Agência Datta</strong>, podemos colocar o Espaço Mulher no topo das pesquisas por "academia feminina", "pilates para mulheres" e outras buscas relevantes na sua região, alcançando mulheres que já estão buscando um lugar para treinar.</p>
+                <p>Além disso, o volume de acessos qualificados gerado através dos anúncios, combinado com nosso <strong>Rastreamento Avançado</strong>, torna o site mais relevante para o Google, aumentando também a visibilidade orgânica a longo prazo.</p>
+            </div>
 
-                <div class="ponto-card">
-                    <div class="ponto-card-icon">📱</div>
-                    <h3>Potencial de Busca no Instagram</h3>
-                    <p>O Instagram é uma ferramenta poderosa para academias, onde alunas buscam inspiração, rotinas e até mesmo o ambiente antes de visitar. Pesquisando por termos como "academia Petrópolis" ou "treino feminino", seu perfil pode não estar sendo facilmente encontrado.</p>
-                    <p>Muitas vezes, a otimização do nome e da biografia do perfil para incluir termos-chave relacionados à sua categoria pode fazer uma grande diferença na visibilidade para novas potenciais alunas que ainda não seguem o <strong>Espaço Mulher</strong>.</p>
+            <div class="sugestao-item">
+                <div class="sugestao-header">
+                    <span class="sugestao-emoji">📍</span>
+                    <h3>Google Meu Negócio</h3>
                 </div>
+                <p>Otimize a ficha do Espaço Mulher no Google Meu Negócio. Adicione um menu de serviços detalhado com todas as modalidades oferecidas (musculação, pilates, zumba, yoga, etc.), horários de funcionamento e uma descrição completa dos diferenciais do seu espaço.</p>
+                <p>Invista em fotos de alta qualidade da sua estrutura, das aulas em andamento e dos resultados de alunas. Isso gera mais confiança e atrai mais olhares. Continue incentivando suas alunas a fazerem avaliações positivas no Google, isso aumenta sua autoridade e melhora seu posicionamento nas buscas locais.</p>
+            </div>
+
+            <div class="sugestao-item">
+                <div class="sugestao-header">
+                    <span class="sugestao-emoji">📱</span>
+                    <h3>Instagram</h3>
+                </div>
+                <p>Para o Espaço Mulher ser encontrado nas buscas do Instagram, é fundamental <strong>adicionar termos como "Academia Feminina", "Fitness para Mulheres" ou "Treino Mulher" no nome do perfil</strong>. Isso alinha seu perfil com a forma como as pessoas buscam serviços na plataforma.</p>
+                <p>Crie destaques ou posts fixados com informações essenciais: modalidades oferecidas, horários de aula, depoimentos de alunas, tour pelo espaço e promoções. As mulheres usam o Instagram para conhecer o ambiente e a comunidade antes de visitar.</p>
+                <p>Informações diretas e visuais aumentam a conexão e a consciência de quem está buscando um espaço para cuidar da saúde e bem-estar.</p>
             </div>
         </div>
-    </section>
-
-    <!-- SUGESTÕES DE MELHORIAS -->
-    <section class="section sugestoes">
-        <div class="container">
-            <p class="section-label">Sugestões de</p>
-            <h2 class="section-heading">Melhorias</h2>
-            <p class="section-subtitle">Ações práticas que você pode implementar para melhorar seus resultados e atrair mais alunas.</p>
-
-            <div class="sugestoes-list">
-                <div class="sugestao-item">
-                    <div class="sugestao-header">
-                        <span class="sugestao-emoji">🔍</span>
-                        <h3>Aumentar Visibilidade no Google</h3>
-                    </div>
-                    <p>Para o <strong>Espaço Mulher</strong> ser encontrado rapidamente por quem busca uma academia na sua região, a melhor solução são os **anúncios online (Tráfego Pago)**. Isso te coloca nas primeiras posições do Google para buscas locais, como "academia em Petrópolis".</p>
-                    <p>Além de gerar fluxo imediato de novas alunas para seu negócio, o volume de cliques e visitas que os anúncios trazem aumenta a relevância do seu site para o Google, melhorando também sua visibilidade orgânica a longo prazo.</p>
-                    <p>Nós da Agência Datta somos especialistas em tráfego pago com rastreamento avançado, garantindo que cada real investido traga o máximo de alunas para você.</p>
-                </div>
-
-                <div class="sugestao-item">
-                    <div class="sugestao-header">
-                        <span class="sugestao-emoji">📍</span>
-                        <h3>Otimizar Google Meu Negócio</h3>
-                    </div>
-                    <p>Capriche na seção de fotos, adicionando imagens de alta qualidade do ambiente do <strong>Espaço Mulher</strong>, dos equipamentos, das aulas e até de alunas em ação. Isso inspira confiança e mostra a atmosfera do seu espaço.</p>
-                    <p>Adicione uma descrição detalhada de todos os serviços e modalidades que o <strong>Espaço Mulher</strong> oferece (musculação, yoga, zumba, dança, etc.), incluindo horários e diferenciais. Quanto mais informações, mais fácil será para novas alunas encontrarem e escolherem você.</p>
-                    <p>Incentive ativamente suas alunas satisfeitas a deixarem avaliações. Responda a todas elas, sejam positivas ou negativas, para demonstrar engajamento e melhorar sua reputação online.</p>
-                </div>
-
-                <div class="sugestao-item">
-                    <div class="sugestao-header">
-                        <span class="sugestao-emoji">📱</span>
-                        <h3>Impulsionar o Instagram do Espaço Mulher</h3>
-                    </div>
-                    <p>Altere o nome do seu perfil no Instagram para algo como "Espaço Mulher | Academia Petrópolis" ou "Espaço Mulher | Fitness Feminino". Isso facilita a busca e o reconhecimento por novas alunas.</p>
-                    <p>Crie destaques ou posts fixados com os principais diferenciais do <strong>Espaço Mulher</strong>: tipos de aula, depoimentos de alunas, estrutura da academia, promoções e informações de contato. Mantenha o conteúdo atualizado e visualmente atraente.</p>
-                    <p>Utilize mais hashtags relevantes em suas postagens (#academiamulher, #treinofeminino, #fitnesspetropolis, #espacomulher, #vidasaudavel) para aumentar o alcance e a descoberta por novas alunas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section cta-final">
-        <div class="container">
-            <h2 class="section-heading animate">Pronta para transformar estes insights em resultados?</h2>
-            <p class="section-subtitle animate animate-delay-1">Nossa especialidade é levar mais alunas ao seu <strong>Espaço Mulher</strong> através de estratégias de Tráfego Pago e Rastreamento Avançado.</p>
-            <p class="section-subtitle animate animate-delay-2">Que tal um bate-papo sem compromisso para criarmos um plano personalizado para o seu negócio?</p>
-            <a href="https://wa.me/5524998151011?text=Ol%C3%A1%2C%20Lucas!%20Vi%20a%20an%C3%A1lise%20do%20Espa%C3%A7o%20Mulher%20e%20quero%20conversar%20mais%20sobre%20como%20aumentar%20minhas%20alunas." class="cta-button animate animate-delay-3" target="_blank">Falar com a Agência Datta via WhatsApp</a>
-            <p class="cta-small-print animate animate-delay-4">Ou se preferir, envie um e-mail para <a href="mailto:contato@agenciadatta.com.br">contato@agenciadatta.com.br</a></p>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- CONSULTORIA CTA -->
     <section class="consultoria">
