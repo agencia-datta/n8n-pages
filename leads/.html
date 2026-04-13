@@ -523,6 +523,73 @@
         }
         .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
+        /* Custom CTA Final Section styles */
+        .cta-final {
+            text-align: center;
+            background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-escuro) 100%);
+            color: var(--branco);
+            padding: 80px 0;
+            border-radius: 16px;
+            margin: 0 auto;
+            max-width: 1080px;
+            margin-top: 60px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        .cta-final .container {
+            max-width: 720px;
+        }
+
+        .cta-final .section-heading {
+            color: var(--branco);
+            margin-bottom: 20px;
+            font-size: clamp(28px, 4vw, 38px);
+        }
+
+        .cta-final .section-subtitle {
+            color: rgba(255,255,255,0.8);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            max-width: 100%;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--branco);
+            color: var(--verde-escuro);
+            padding: 18px 48px;
+            border-radius: 60px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-top: 36px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+        }
+
+        .cta-small-print {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 24px;
+        }
+
+        .cta-small-print a {
+            color: var(--branco);
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-small-print a:hover {
+            opacity: 0.8;
+        }
+
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
             .section { padding: 64px 0; }
@@ -548,6 +615,25 @@
                 flex-direction: column;
                 gap: 16px;
                 text-align: center;
+            }
+
+            .cta-final {
+                margin-top: 40px;
+                padding: 60px 24px;
+                border-radius: 8px;
+            }
+
+            .cta-final .section-heading {
+                font-size: 26px;
+            }
+
+            .cta-final .section-subtitle {
+                font-size: 15px;
+            }
+
+            .cta-button {
+                padding: 16px 36px;
+                font-size: 14px;
             }
         }
     </style>
@@ -575,8 +661,8 @@
     <section class="hero">
         <div class="container">
             <p class="hero-label">Análise personalizada</p>
-            <h1 class="animate">Análise de Estrutura<br>de <em>Marketing Digital</em><br>para a <strong>Point Fitness</strong></h1>
-            <p class="hero-desc animate animate-delay-2">Fizemos essa análise com o intuito de mapear oportunidades e pontos de melhoria para o seu negócio, focando em atrair mais alunos e otimizar sua presença online.</p>
+            <h1 class="animate">Análise de Estrutura<br>de <em>Marketing Digital</em></h1>
+            <p class="hero-desc animate animate-delay-2">Fizemos essa análise com o intuito de mapear oportunidades e pontos de melhoria para o seu negócio, o <strong>Espaço Mulher</strong>.</p>
             <div class="hero-line animate animate-delay-3"></div>
         </div>
     </section>
@@ -586,14 +672,14 @@
         <div class="container">
             <p class="section-label animate">Principal</p>
             <h2 class="section-heading animate animate-delay-1">Oportunidade</h2>
-            <p class="section-subtitle animate animate-delay-2">Identificamos o ponto com maior potencial de impacto para o seu negócio: atrair alunos no momento exato em que eles buscam uma academia.</p>
+            <p class="section-subtitle animate animate-delay-2">Identificamos o ponto com maior potencial de impacto para o seu negócio.</p>
 
             <div class="oportunidade-card animate animate-delay-3">
-                <div class="oportunidade-icon">🥇</div>
-                <h3>Visibilidade no Google para "Academia" na sua região</h3>
-                <p>Segundo dados da própria Google, cerca de <span class="highlight-stat">60% das buscas por serviços locais</span> resultam em uma visita ao estabelecimento em até 24 horas.</p>
-                <p>Ao pesquisar por termos como "academia em [Sua Cidade]" ou "melhores academias [Sua Cidade]" — que são pesquisas chave para atrair novos alunos — não encontramos a Point Fitness entre os primeiros resultados, e nem mesmo na primeira página.</p>
-                <p>Isso significa que potenciais alunos, já prontos para se matricular, estão encontrando e optando por seus concorrentes que aparecem de forma proeminente nas buscas. Você está perdendo a chance de ser a primeira opção.</p>
+                <div class="oportunidade-icon">📈</div>
+                <h3>Visibilidade em Pesquisas Locais no Google</h3>
+                <p>Segundo dados da própria Google, cerca de <span class="highlight-stat">40% das pessoas</span> que pesquisam no Google clicam no 1º resultado de sua pesquisa.</p>
+                <p>Ao pesquisar por termos como "academia Petrópolis", "fitness feminino Petrópolis" ou "musculação para mulheres" — pesquisas cruciais para quem busca um espaço como o seu — não encontramos o <strong>Espaço Mulher</strong> entre os primeiros resultados, e nem mesmo na primeira página.</p>
+                <p>Muitas mulheres já estão prontas para começar a treinar ou buscar um novo espaço fitness, mas não estão encontrando o seu negócio quando pesquisam ativamente. Isso representa uma grande oportunidade de atrair novas alunas!</p>
             </div>
         </div>
     </section>
@@ -603,21 +689,21 @@
         <div class="container">
             <p class="section-label">Pontos de</p>
             <h2 class="section-heading">Atenção</h2>
-            <p class="section-subtitle">Aspectos que merecem atenção para fortalecer sua presença digital e captar mais alunos.</p>
+            <p class="section-subtitle">Aspectos que merecem atenção para fortalecer sua presença digital e atrair mais alunas.</p>
 
             <div class="pontos-grid">
                 <div class="ponto-card">
                     <div class="ponto-card-icon">📍</div>
-                    <h3>Presença no Google Meu Negócio</h3>
-                    <p>Ao pesquisar por academias na sua região, notamos que sua ficha do Google Meu Negócio, embora existente, não se destaca entre as principais recomendações nos resultados locais.</p>
-                    <p>Sua ficha pode ter informações básicas, mas talvez não esteja otimizada com fotos de qualidade, horários atualizados e uma descrição cativante que incentive a visita. Isso é crucial para quem busca uma academia por proximidade.</p>
+                    <h3>Otimização do Google Meu Negócio</h3>
+                    <p>Ao pesquisar por "Espaço Mulher Petrópolis", encontramos seu perfil no Google Meu Negócio. Ele está ativo, o que é ótimo! No entanto, na pesquisa por termos genéricos como "academia Petrópolis", ele não aparece entre as principais recomendações do mapa.</p>
+                    <p>Isso indica que, apesar de ter um perfil, ele pode não estar totalmente otimizado para ser encontrado por novas alunas que não conhecem seu nome, mas buscam um serviço na sua região.</p>
                 </div>
 
                 <div class="ponto-card">
                     <div class="ponto-card-icon">📱</div>
-                    <h3>Potencial não explorado no Instagram</h3>
-                    <p>O Instagram é uma vitrine poderosa para academias, permitindo mostrar a atmosfera do local, o profissionalismo dos instrutores e o progresso dos alunos.</p>
-                    <p>Identificamos que há uma oportunidade de aumentar o engajamento e o alcance das suas postagens, utilizando mais recursos como Reels, Stories interativos e hashtags estratégicas que atraiam seu público-alvo local e mostrem o dia a dia da academia.</p>
+                    <h3>Potencial de Busca no Instagram</h3>
+                    <p>O Instagram é uma ferramenta poderosa para academias, onde alunas buscam inspiração, rotinas e até mesmo o ambiente antes de visitar. Pesquisando por termos como "academia Petrópolis" ou "treino feminino", seu perfil pode não estar sendo facilmente encontrado.</p>
+                    <p>Muitas vezes, a otimização do nome e da biografia do perfil para incluir termos-chave relacionados à sua categoria pode fazer uma grande diferença na visibilidade para novas potenciais alunas que ainda não seguem o <strong>Espaço Mulher</strong>.</p>
                 </div>
             </div>
         </div>
@@ -628,39 +714,49 @@
         <div class="container">
             <p class="section-label">Sugestões de</p>
             <h2 class="section-heading">Melhorias</h2>
-            <p class="section-subtitle">Ações práticas que você pode implementar para atrair mais alunos e impulsionar o crescimento da Point Fitness.</p>
+            <p class="section-subtitle">Ações práticas que você pode implementar para melhorar seus resultados e atrair mais alunas.</p>
 
             <div class="sugestoes-list">
                 <div class="sugestao-item">
                     <div class="sugestao-header">
-                        <span class="sugestao-emoji">🚀</span>
-                        <h3>Visibilidade Instantânea no Google (Tráfego Pago)</h3>
+                        <span class="sugestao-emoji">🔍</span>
+                        <h3>Aumentar Visibilidade no Google</h3>
                     </div>
-                    <p>A forma mais rápida e eficiente de aparecer para quem busca "academia em [Sua Cidade]" são os <strong>Anúncios Online (Tráfego Pago)</strong> no Google. Eles colocam a Point Fitness no topo das pesquisas, diretamente para quem já tem intenção de se matricular.</p>
-                    <p>Isso gera um fluxo constante de novos leads qualificados e, como bônus, aumenta a relevância da sua marca para o algoritmo do Google, melhorando gradualmente seu posicionamento orgânico.</p>
-                    <p>Com o rastreamento avançado da Agência Datta, você saberá exatamente o retorno sobre cada centavo investido, com clareza total sobre o número de cliques, agendamentos e matrículas geradas pelos anúncios.</p>
+                    <p>Para o <strong>Espaço Mulher</strong> ser encontrado rapidamente por quem busca uma academia na sua região, a melhor solução são os **anúncios online (Tráfego Pago)**. Isso te coloca nas primeiras posições do Google para buscas locais, como "academia em Petrópolis".</p>
+                    <p>Além de gerar fluxo imediato de novas alunas para seu negócio, o volume de cliques e visitas que os anúncios trazem aumenta a relevância do seu site para o Google, melhorando também sua visibilidade orgânica a longo prazo.</p>
+                    <p>Nós da Agência Datta somos especialistas em tráfego pago com rastreamento avançado, garantindo que cada real investido traga o máximo de alunas para você.</p>
                 </div>
 
                 <div class="sugestao-item">
                     <div class="sugestao-header">
-                        <span class="sugestao-emoji">🌟</span>
-                        <h3>Otimização do Google Meu Negócio</h3>
+                        <span class="sugestao-emoji">📍</span>
+                        <h3>Otimizar Google Meu Negócio</h3>
                     </div>
-                    <p><strong>Enriqueça sua ficha com fotos e vídeos de alta qualidade:</strong> mostre a estrutura da academia, o ambiente de treino, a variedade de equipamentos e aulas. Fotos de antes e depois (com autorização) ou depoimentos em vídeo podem ser muito impactantes.</p>
-                    <p><strong>Mantenha as informações sempre atualizadas:</strong> horários de funcionamento, telefone, site e um menu detalhado de serviços (aulas, pacotes, treinos personalizados).</p>
-                    <p><strong>Incentive ativamente as avaliações:</strong> um grande número de avaliações positivas não só aumenta sua credibilidade, mas também melhora seu ranking nos resultados de busca locais. Responda a todas as avaliações, positivas e negativas.</p>
+                    <p>Capriche na seção de fotos, adicionando imagens de alta qualidade do ambiente do <strong>Espaço Mulher</strong>, dos equipamentos, das aulas e até de alunas em ação. Isso inspira confiança e mostra a atmosfera do seu espaço.</p>
+                    <p>Adicione uma descrição detalhada de todos os serviços e modalidades que o <strong>Espaço Mulher</strong> oferece (musculação, yoga, zumba, dança, etc.), incluindo horários e diferenciais. Quanto mais informações, mais fácil será para novas alunas encontrarem e escolherem você.</p>
+                    <p>Incentive ativamente suas alunas satisfeitas a deixarem avaliações. Responda a todas elas, sejam positivas ou negativas, para demonstrar engajamento e melhorar sua reputação online.</p>
                 </div>
 
                 <div class="sugestao-item">
                     <div class="sugestao-header">
-                        <span class="sugestao-emoji">💪</span>
-                        <h3>Estratégia de Conteúdo e Engajamento no Instagram</h3>
+                        <span class="sugestao-emoji">📱</span>
+                        <h3>Impulsionar o Instagram do Espaço Mulher</h3>
                     </div>
-                    <p><strong>Use o Instagram para criar uma comunidade:</strong> compartilhe rotinas de treino, dicas de saúde e nutrição, bastidores da academia e conquistas dos alunos. Use Reels com desafios e transformações.</p>
-                    <p><strong>Otimize seu perfil para buscas:</strong> inclua termos como "Academia [Sua Cidade]", "Treino Funcional" ou "Musculação" no seu nome de usuário ou biografia para ser encontrado mais facilmente.</p>
-                    <p><strong>Crie CTAs claras:</strong> convide seguidores a visitar a academia, agendar uma aula experimental ou conferir promoções através de links na bio ou stickers nos Stories. Engaje com comentários e DMs para construir relacionamentos.</p>
+                    <p>Altere o nome do seu perfil no Instagram para algo como "Espaço Mulher | Academia Petrópolis" ou "Espaço Mulher | Fitness Feminino". Isso facilita a busca e o reconhecimento por novas alunas.</p>
+                    <p>Crie destaques ou posts fixados com os principais diferenciais do <strong>Espaço Mulher</strong>: tipos de aula, depoimentos de alunas, estrutura da academia, promoções e informações de contato. Mantenha o conteúdo atualizado e visualmente atraente.</p>
+                    <p>Utilize mais hashtags relevantes em suas postagens (#academiamulher, #treinofeminino, #fitnesspetropolis, #espacomulher, #vidasaudavel) para aumentar o alcance e a descoberta por novas alunas.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section cta-final">
+        <div class="container">
+            <h2 class="section-heading animate">Pronta para transformar estes insights em resultados?</h2>
+            <p class="section-subtitle animate animate-delay-1">Nossa especialidade é levar mais alunas ao seu <strong>Espaço Mulher</strong> através de estratégias de Tráfego Pago e Rastreamento Avançado.</p>
+            <p class="section-subtitle animate animate-delay-2">Que tal um bate-papo sem compromisso para criarmos um plano personalizado para o seu negócio?</p>
+            <a href="https://wa.me/5524998151011?text=Ol%C3%A1%2C%20Lucas!%20Vi%20a%20an%C3%A1lise%20do%20Espa%C3%A7o%20Mulher%20e%20quero%20conversar%20mais%20sobre%20como%20aumentar%20minhas%20alunas." class="cta-button animate animate-delay-3" target="_blank">Falar com a Agência Datta via WhatsApp</a>
+            <p class="cta-small-print animate animate-delay-4">Ou se preferir, envie um e-mail para <a href="mailto:contato@agenciadatta.com.br">contato@agenciadatta.com.br</a></p>
         </div>
     </section>
 
