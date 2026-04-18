@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Marketing — Drª Aline Rosa | Agência Datta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-escuro: #091105;
+            --verde-medio: #00392F;
+            --cinza-escuro: #323232;
+            --branco: #FFFFFF;
+            --verde-claro: #00503f;
+            --verde-accent: #00694f;
+            --fundo-claro: #f6f7f5;
+            --fundo-card: rgba(0, 57, 47, 0.04);
+            --borda-sutil: rgba(0, 57, 47, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--cinza-escuro);
+            background: var(--branco);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate {
+            animation: fadeUp 0.7s ease-out both;
+        }
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
+        .animate-delay-4 { animation-delay: 0.4s; }
+        .animate-delay-5 { animation-delay: 0.5s; }
+
+        /* ─── HEADER ─── */
+        .header {
+            background: var(--verde-escuro);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-logo {
+            font-family: 'DM Serif Display', serif;
+            color: var(--branco);
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+        .header-logo span {
+            color: var(--verde-accent);
+            font-weight: 400;
+        }
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .header nav a {
+            color: rgba(255,255,255,0.65);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .header nav a:hover { color: var(--branco); }
+
+        /* ─── HERO ─── */
+        .hero {
+            background: var(--verde-escuro);
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,57,47,0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0,57,47,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 24px;
+            animation: fadeIn 0.6s ease-out both;
+        }
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 400;
+            color: var(--branco);
+            line-height: 1.15;
+            margin-bottom: 28px;
+            max-width: 720px;
+            animation: fadeUp 0.7s ease-out 0.15s both;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: rgba(255,255,255,0.55);
+        }
+        .hero-desc {
+            font-size: 17px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+            max-width: 540px;
+            animation: fadeUp 0.7s ease-out 0.3s both;
+        }
+        .hero-line {
+            width: 60px;
+            height: 3px;
+            background: var(--verde-medio);
+            margin-top: 40px;
+            border-radius: 2px;
+            animation: fadeUp 0.7s ease-out 0.45s both;
+        }
+
+        /* ─── SECTIONS ─── */
+        .section { padding: 90px 0; }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--verde-medio);
+            margin-bottom: 12px;
+        }
+        .section-heading {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--verde-escuro);
+        }
+        .section-subtitle {
+            font-size: 16px;
+            color: rgba(50,50,50,0.6);
+            line-height: 1.7;
+            max-width: 560px;
+            margin-bottom: 48px;
+        }
+
+        /* ─── OPORTUNIDADE (Principal) ─── */
+        .oportunidade {
+            background: var(--fundo-claro);
+            border-top: 1px solid var(--borda-sutil);
+            border-bottom: 1px solid var(--borda-sutil);
+        }
+        .oportunidade-card {
+            background: var(--branco);
+            border-radius: 16px;
+            padding: 48px;
+            border: 1px solid var(--borda-sutil);
+            position: relative;
+            overflow: hidden;
+        }
+        .oportunidade-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--verde-medio), var(--verde-escuro));
+            border-radius: 4px 0 0 4px;
+        }
+        .oportunidade-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--fundo-card);
+            border-radius: 12px;
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+        .oportunidade-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--verde-escuro);
+        }
+        .oportunidade-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(50,50,50,0.7);
+            margin-bottom: 14px;
+        }
+        .oportunidade-card p:last-child { margin-bottom: 0; }
+        .highlight-stat {
+            display: inline-block;
+            font-weight: 700;
+            color: var(--verde-medio);
+        }
+
+        /* ─── PONTOS DE ATENÇÃO ─── */
+        .pontos-atencao {
+            background: var(--verde-escuro);
+            color: var(--branco);
+        }
+        .pontos-atencao .section-label { color: rgba(255,255,255,0.35); }
+        .pontos-atencao .section-heading { color: var(--branco); }
+        .pontos-atencao .section-subtitle { color: rgba(255,255,255,0.4); }
+
+        .pontos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .ponto-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 36px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .ponto-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.12);
+        }
+        .ponto-card-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(0,57,47,0.5);
+            border-radius: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .ponto-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.9);
+        }
+        .ponto-card p {
+            font-size: 14px;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 12px;
+        }
+        .ponto-card p:last-child { margin-bottom: 0; }
+
+        /* ─── SUGESTÕES ─── */
+        .sugestoes {
+            background: var(--fundo-claro);
+            border-top: 1px solid var(--borda-sutil);
+            border-bottom: 1px solid var(--borda-sutil);
+        }
+        .sugestoes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            counter-reset: sugestao;
+        }
+        .sugestao-item {
+            background: var(--branco);
+            border: 1px solid var(--borda-sutil);
+            border-radius: 16px;
+            padding: 36px 36px 36px 44px;
+            position: relative;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            counter-increment: sugestao;
+        }
+        .sugestao-item:hover {
+            border-color: rgba(0,57,47,0.2);
+            box-shadow: 0 8px 32px rgba(0,57,47,0.06);
+        }
+        .sugestao-item::before {
+            content: counter(sugestao, decimal-leading-zero);
+            position: absolute;
+            top: 36px;
+            left: -1px;
+            background: var(--verde-medio);
+            color: var(--branco);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px 4px 8px;
+            border-radius: 0 6px 6px 0;
+            letter-spacing: 1px;
+        }
+        .sugestao-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .sugestao-emoji {
+            font-size: 22px;
+        }
+        .sugestao-header h3 {
+            font-size: 17px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: var(--verde-escuro);
+        }
+        .sugestao-item p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(50,50,50,0.65);
+            margin-bottom: 10px;
+            padding-left: 34px;
+        }
+        .sugestao-item p:last-child { margin-bottom: 0; }
+
+        /* ─── CONSULTORIA CTA ─── */
+        .consultoria {
+            background: var(--verde-medio);
+            color: var(--branco);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .consultoria::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .consultoria .container { position: relative; z-index: 1; }
+        .consultoria h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .consultoria h2 em {
+            font-style: italic;
+            display: block;
+            opacity: 0.6;
+            font-size: 0.7em;
+            margin-top: 4px;
+        }
+        .consultoria p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.7);
+            max-width: 520px;
+            margin: 0 auto 12px;
+        }
+        .btn-cta {
+            display: inline-block;
+            background: var(--branco);
+            color: var(--verde-medio);
+            padding: 16px 44px;
+            border-radius: 60px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 28px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+
+        /* ─── SOBRE NÓS ─── */
+        .sobre-nos {
+            background: var(--verde-escuro);
+            color: var(--branco);
+        }
+        .sobre-nos .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .sobre-nos .section-label { color: rgba(255,255,255,0.3); }
+        .sobre-nos h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+        .sobre-nos p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 14px;
+        }
+        .sobre-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .stat-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: var(--branco);
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.35);
+        }
+        .btn-outline {
+            display: inline-block;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.7);
+            padding: 12px 32px;
+            border-radius: 60px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 28px;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            border-color: var(--branco);
+            color: var(--branco);
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            background: #050a03;
+            padding: 36px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 16px;
+            color: rgba(255,255,255,0.3);
+        }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.3);
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .section { padding: 64px 0; }
+
+            .hero { padding: 64px 0 80px; }
+            .hero h1 { font-size: 32px; }
+
+            .header nav { display: none; }
+
+            .pontos-grid { grid-template-columns: 1fr; }
+
+            .oportunidade-card { padding: 32px 24px; }
+
+            .sugestao-item { padding: 28px 24px 28px 36px; }
+            .sugestao-item p { padding-left: 0; }
+
+            .sobre-nos .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="https://agenciadatta.com.br" class="header-logo">
+                DATTA<span>.</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://agenciadatta.com.br/servicos/">Serviços</a></li>
+                    <li><a href="https://agenciadatta.com.br/dashboards/">Dashboards</a></li>
+                    <li><a href="https://agenciadatta.com.br/traqueamento/">Rastreamento</a></li>
+                    <li><a href="https://wa.me/5524998151011">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <p class="hero-label">Análise personalizada</p>
+        <h1 class="animate">Análise de Estrutura<br>de <em>Marketing Digital</em> para o <span class="highlight-name">Dr. João Medeiros</span></h1>
+        <p class="hero-desc animate animate-delay-2">Fizemos essa análise com o intuito de mapear oportunidades e pontos de melhoria para potencializar sua presença online e atrair mais pacientes para sua clínica de Cirurgia Plástica.</p>
+        <div class="hero-line animate animate-delay-3"></div>
+    </div>
+</section>
+
+<!-- PRINCIPAL OPORTUNIDADE -->
+<section class="section oportunidade">
+    <div class="container">
+        <p class="section-label animate">Principal</p>
+        <h2 class="section-heading animate animate-delay-1">Oportunidade</h2>
+        <p class="section-subtitle animate animate-delay-2">Identificamos o ponto com maior potencial de impacto para o seu consultório.</p>
+
+        <div class="oportunidade-card animate animate-delay-3">
+            <div class="oportunidade-icon">🔍</div>
+            <h3>Pacientes em Busca Ativa no Google</h3>
+            <p>Segundo dados da própria Google, cerca de <span class="highlight-stat">40% das pessoas</span> que pesquisam no Google clicam no 1º resultado de sua pesquisa.</p>
+            <p>Ao pesquisar termos cruciais como "cirurgia plástica [sua cidade]" ou "melhor cirurgião plástico [sua cidade]" — que indicam alta intenção de agendamento — notamos que seu site não aparece entre os primeiros resultados, e nem mesmo na primeira página.</p>
+            <p>Quem pesquisa por cirurgiões plásticos ou procedimentos específicos no Google já está pronto para dar o próximo passo. No entanto, você não está aparecendo para esses potenciais pacientes no momento mais decisivo da jornada deles.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PONTOS DE ATENÇÃO -->
+<section class="section pontos-atencao">
+    <div class="container">
+        <p class="section-label">Pontos de</p>
+        <h2 class="section-heading">Atenção</h2>
+        <p class="section-subtitle">Aspectos que merecem atenção para fortalecer sua presença digital e atrair pacientes qualificados.</p>
+
+        <div class="pontos-grid">
+            <div class="ponto-card">
+                <div class="ponto-card-icon">📍</div>
+                <h3>Visibilidade no Google Meu Negócio</h3>
+                <p>Na mesma pesquisa por "cirurgião plástico [sua cidade]", observamos que seu perfil no Google Meu Negócio não se destaca entre as principais recomendações na seção de mapa.</p>
+                <p>Embora seu perfil seja encontrado ao pesquisar diretamente pelo seu nome e apresente boas avaliações, a ausência nas buscas gerais limita o alcance para novos pacientes que ainda não conhecem o seu trabalho.</p>
+            </div>
+
+            <div class="ponto-card">
+                <div class="ponto-card-icon">📱</div>
+                <h3>Encontrabilidade no Instagram</h3>
+                <p>Ao pesquisar por termos relacionados à sua especialidade, como "cirurgia plástica [sua cidade]" ou "cirurgião plástico", seu perfil no Instagram não surge entre os resultados mais relevantes, mesmo para quem já interagiu com ele.</p>
+                <p>Muitos pacientes buscam profissionais de saúde e inspiração visualmente no Instagram. A falta de termos-chave no nome do perfil ou uma estratégia de SEO para a plataforma dificulta que novos pacientes te encontrem organicamente e conheçam seu excelente trabalho.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUGESTÕES DE MELHORIAS -->
+<section class="section sugestoes">
+    <div class="container">
+        <p class="section-label">Sugestões de</p>
+        <h2 class="section-heading">Melhorias</h2>
+        <p class="section-subtitle">Ações práticas que você pode implementar para atrair mais pacientes e otimizar seus resultados online.</p>
+
+        <div class="sugestoes-list">
+            <div class="sugestao-item">
+                <div class="sugestao-header">
+                    <span class="sugestao-emoji">🚀</span>
+                    <h3>Posicionamento Estratégico no Google</h3>
+                </div>
+                <p>Seu site tem um bom potencial em termos de carregamento e otimização básica, Dr. João, mas precisa de um impulso estratégico para alcançar as primeiras posições no Google para termos de alta intenção.</p>
+                <p>A solução mais eficaz e rápida para isso são os **anúncios online (Tráfego Pago)**. Eles o colocam no topo das pesquisas na sua região, para o seu público-alvo específico, garantindo visibilidade imediata para quem busca seus serviços.</p>
+                <p>Além de gerar consultas diretas, o volume de tráfego qualificado gerado pelos anúncios sinaliza relevância ao Google, melhorando gradualmente seu posicionamento orgânico e fortalecendo sua autoridade online a longo prazo.</p>
+            </div>
+
+            <div class="sugestao-item">
+                <div class="sugestao-header">
+                    <span class="sugestao-emoji">✨</span>
+                    <h3>Otimização do Google Meu Negócio</h3>
+                </div>
+                <p>Para destacar seu perfil nas buscas locais, adicione o menu de serviços detalhando todos os procedimentos de cirurgia plástica que você oferece. Isso não só organiza as informações, mas também ajuda o Google a entender a relevância do seu perfil para buscas específicas.</p>
+                <p>Inclua fotos de alta qualidade da sua clínica, da equipe (se relevante) e, com a devida autorização e privacidade, alguns resultados de "antes e depois" que demonstrem a excelência do seu trabalho e inspiração para futuros pacientes.</p>
+                <p>Continue incentivando seus pacientes satisfeitos a deixarem avaliações. Responda a todas elas, demonstrando profissionalismo e engajamento. Isso aumenta sua autoridade e melhora significativamente seu ranqueamento local.</p>
+            </div>
+
+            <div class="sugestao-item">
+                <div class="sugestao-header">
+                    <span class="sugestao-emoji">📈</span>
+                    <h3>Instagram Estratégico</h3>
+                </div>
+                <p>Adicione termos como "Cirurgião Plástico" e a "sua cidade" no nome do seu perfil do Instagram (ex: "Dr. João Medeiros | Cirurgião Plástico em [Cidade]"). Isso é crucial para que pessoas buscando por esses serviços te encontrem diretamente na barra de pesquisa.</p>
+                <p>O Instagram é uma vitrine visual. Crie Destaques ou posts fixados com seus principais procedimentos, informações de contato, depoimentos e um FAQ. Informações claras e acessíveis transformam curiosos em pacientes em potencial.</p>
+                <p>Produza conteúdo que edifique sua autoridade e mostre sua expertise. Vídeos curtos explicando procedimentos, tirando dúvidas comuns e mostrando um pouco do seu dia a dia na clínica (sempre com profissionalismo) humanizam sua marca e criam conexão com futuros pacientes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- CONSULTORIA CTA -->
+    <section class="consultoria">
+        <div class="container">
+            <h2>Consultoria<em>Gratuita</em></h2>
+            <p>Obrigado por sua atenção!</p>
+            <p>Gostaria de oferecer a você uma <strong>consultoria gratuita</strong> para te ajudar a melhorar seus resultados com o digital.</p>
+            <p>Para agendar, basta clicar abaixo ou responder no Instagram.</p>
+            <a href="https://wa.me/5524998151011" class="btn-cta">Agendar Consultoria</a>
+        </div>
+    </section>
+
+    <!-- SOBRE NÓS -->
+    <section class="section sobre-nos">
+        <div class="container">
+            <div>
+                <p class="section-label">Quem somos</p>
+                <h2>Agência Datta</h2>
+                <p>Especialistas em Tráfego Pago e Rastreamento Avançado, impulsionando negócios com estratégias orientadas por dados.</p>
+                <p>Fundada em 2021 por Lucas Olimpio, gestor de tráfego e analista de dados, a Datta já entregou resultados expressivos para mais de 50 empresas.</p>
+                <a href="https://agenciadatta.com.br/servicos/" class="btn-outline">Conhecer mais →</a>
+            </div>
+            <div class="sobre-stats">
+                <div class="stat-item">
+                    <div class="stat-number">R$ 10M+</div>
+                    <div class="stat-label">Em tráfego gerenciado</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Empresas atendidas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Implementações</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Anos de experiência</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <span class="footer-brand">Datta © 2026</span>
+            <ul class="footer-links">
+                <li><a href="https://wa.me/5524998151011">WhatsApp</a></li>
+                <li><a href="https://www.instagram.com/lucasolimpio__">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/lucasolimpio/">LinkedIn</a></li>
+                <li><a href="https://agenciadatta.com.br/termos-e-condicoes-de-uso">Termos</a></li>
+                <li><a href="https://agenciadatta.com.br/privacy-policy">Privacidade</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
