@@ -1,197 +1,122 @@
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Marketing — Dr. Savio Fiorot | Agência Datta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --verde-escuro: #091105;
-            --verde-medio: #00392F;
-            --cinza-escuro: #323232;
-            --branco: #FFFFFF;
-            --verde-claro: #00503f;
-            --verde-accent: #00694f;
-            --fundo-claro: #f6f7f5;
-            --fundo-card: rgba(0, 57, 47, 0.04);
-            --borda-sutil: rgba(0, 57, 47, 0.1);
-        }
+<section class="hero">
+        <div class="container">
+            <p class="hero-label">Análise personalizada</p>
+            <h1 class="animate">Análise de Presença Digital<br>de <em>Neuro Oftalmologista</em></h1>
+            <p class="hero-desc animate animate-delay-2">Fizemos essa análise com o intuito de mapear oportunidades e pontos de melhoria para expandir seu alcance e atrair mais pacientes para sua prática.</p>
+            <div class="hero-line animate animate-delay-3"></div>
+        </div>
+    </section>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    <section class="section oportunidade">
+        <div class="container">
+            <p class="section-label animate">Principal</p>
+            <h2 class="section-heading animate animate-delay-1">Oportunidade</h2>
+            <p class="section-subtitle animate animate-delay-2">Identificamos o ponto com maior potencial de impacto para o seu negócio.</p>
 
-        html { scroll-behavior: smooth; }
+            <div class="oportunidade-card animate animate-delay-3">
+                <div class="oportunidade-icon">🧠</div>
+                <h3>Conversão de Seguidores em Pacientes</h3>
+                <p>Você já construiu uma base sólida no Instagram com <span class="highlight-stat">2.157 seguidores</span> e 268 posts demonstrando sua expertise em neuro oftalmologia. Esse é um ativo valioso que está sendo subutilizado.</p>
+                <p>A maioria dos seus seguidores já tem interesse em seus serviços, mas faltam elementos estratégicos que os convertam em consultas agendadas. Pessoas que você já conquistou no Instagram ainda precisam dar o próximo passo — agendar uma consulta com você.</p>
+                <p>Com ajustes estratégicos no seu perfil e na forma como você guia seus seguidores para ação, você pode transformar esse engajamento em receita consistente, especialmente considerando que neuro oftalmologia é uma especialidade de alto valor agregado.</p>
+            </div>
+        </div>
+    </section>
 
-        body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            color: var(--cinza-escuro);
-            background: var(--branco);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+    <section class="section pontos-atencao">
+        <div class="container">
+            <p class="section-label">Pontos de</p>
+            <h2 class="section-heading">Atenção</h2>
+            <p class="section-subtitle">Aspectos que merecem atenção para fortalecer sua presença digital e atrair mais pacientes.</p>
 
-        a { text-decoration: none; color: inherit; }
+            <div class="pontos-grid">
+                <div class="ponto-card">
+                    <div class="ponto-card-icon">📱</div>
+                    <h3>Perfil do Instagram Pouco Otimizado</h3>
+                    <p>Sua biografia não inclui call-to-action claro ou link de agendamento. Pessoas que chegam ao seu perfil não sabem exatamente como agendar uma consulta.</p>
+                    <p>O WhatsApp é mencionado na bio, mas sem link clicável. Isso cria atrito no caminho para conversão — quanto mais cliques necessários, menos pessoas completam a ação.</p>
+                </div>
 
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+                <div class="ponto-card">
+                    <div class="ponto-card-icon">🔗</div>
+                    <h3>Desconexão entre Site e Instagram</h3>
+                    <p>Seu site existe, mas não parece estar integrado como destino principal do seu Instagram. Não há sinergias claras que guiem seguidores do Instagram para seu site ou sistema de agendamento.</p>
+                    <p>Você está gerando interesse no Instagram, mas direcionando para WhatsApp ao invés de centralizar os agendamentos em um único canal profissional.</p>
+                </div>
 
-        /* ─── ANIMATIONS ─── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideRight {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .animate {
-            animation: fadeUp 0.7s ease-out both;
-        }
-        .animate-delay-1 { animation-delay: 0.1s; }
-        .animate-delay-2 { animation-delay: 0.2s; }
-        .animate-delay-3 { animation-delay: 0.3s; }
-        .animate-delay-4 { animation-delay: 0.4s; }
-        .animate-delay-5 { animation-delay: 0.5s; }
+                <div class="ponto-card">
+                    <div class="ponto-card-icon">🔍</div>
+                    <h3>Ausência no Google Local</h3>
+                    <p>Não encontramos seu perfil no Google Meu Negócio. Isso significa que pacientes que buscam "neuro oftalmologista" ou "oftalmologista especializado" em sua região não conseguem encontrá-lo facilmente.</p>
+                    <p>Esse é um canal gratuito que complementaria seu Instagram e capturaria pacientes em momentos de alta intenção de compra.</p>
+                </div>
 
-        /* ─── HEADER ─── */
-        .header {
-            background: var(--verde-escuro);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header-logo {
-            font-family: 'DM Serif Display', serif;
-            color: var(--branco);
-            font-size: 20px;
-            letter-spacing: 1px;
-        }
-        .header-logo span {
-            color: var(--verde-accent);
-            font-weight: 400;
-        }
-        .header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-        .header nav a {
-            color: rgba(255,255,255,0.65);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .header nav a:hover { color: var(--branco); }
+                <div class="ponto-card">
+                    <div class="ponto-card-icon">⭐</div>
+                    <h3>Falta de Prova Social Estruturada</h3>
+                    <p>Embora você tenha muitos posts, não há destaque claro de depoimentos, avaliações ou resultados de pacientes satisfeitos nos elementos visuais principais do perfil.</p>
+                    <p>Neuro oftalmologia é uma especialidade que gera muita confiança — mas apenas se as pessoas conseguirem ver rapidamente as evidências dessa expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        /* ─── HERO ─── */
-        .hero {
-            background: var(--verde-escuro);
-            padding: 100px 0 120px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0,57,47,0.4) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0,57,47,0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero .container { position: relative; z-index: 1; }
-        .hero-label {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.45);
-            margin-bottom: 24px;
-            animation: fadeIn 0.6s ease-out both;
-        }
-        .hero h1 {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(36px, 5vw, 56px);
-            font-weight: 400;
-            color: var(--branco);
-            line-height: 1.15;
-            margin-bottom: 28px;
-            max-width: 720px;
-            animation: fadeUp 0.7s ease-out 0.15s both;
-        }
-        .hero h1 em {
-            font-style: italic;
-            color: rgba(255,255,255,0.55);
-        }
-        .hero-desc {
-            font-size: 17px;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-            max-width: 540px;
-            animation: fadeUp 0.7s ease-out 0.3s both;
-        }
-        .hero-line {
-            width: 60px;
-            height: 3px;
-            background: var(--verde-medio);
-            margin-top: 40px;
-            border-radius: 2px;
-            animation: fadeUp 0.7s ease-out 0.45s both;
-        }
+    <section class="section sugestoes">
+        <div class="container">
+            <p class="section-label">Sugestões de</p>
+            <h2 class="section-heading">Melhorias</h2>
+            <p class="section-subtitle">Ações práticas que você pode implementar para aumentar agendamentos e visibilidade profissional.</p>
 
-        /* ─── SECTIONS ─── */
-        .section { padding: 90px 0; }
+            <div class="sugestoes-list">
+                <div class="sugestao-item">
+                    <div class="sugestao-header">
+                        <span class="sugestao-emoji">📱</span>
+                        <h3>Otimizar Perfil do Instagram para Conversão</h3>
+                    </div>
+                    <p>Adicione um link clicável no Instagram (use ferramenta como Linktree ou direcione para seu site) que leve a um formulário de agendamento ou redirecionamento para WhatsApp com contexto claro.</p>
+                    <p>Reformule sua bio colocando um call-to-action direto: "Agende sua consulta de neuro oftalmologia → [link]". A bio é o primeiro ponto de contato — deixe claro qual é a próxima ação.</p>
+                    <p>Crie um destaque fixado no seu perfil com "Como Agendar" mostrando os passos para marcar consulta. Muitos visitantes não scrollam toda a bio.</p>
+                </div>
 
-        .section-label {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--verde-medio);
-            margin-bottom: 12px;
-        }
-        .section-heading {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(28px, 3.5vw, 40px);
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: var(--verde-escuro);
-        }
-        .section-subtitle {
-            font-size: 16px;
-            color: rgba(50,
+                <div class="sugestao-item">
+                    <div class="sugestao-header">
+                        <span class="sugestao-emoji">🌐</span>
+                        <h3>Criar Google Meu Negócio e Aparecer no Google Maps</h3>
+                    </div>
+                    <p>Registre seu consultório no Google Meu Negócio (se ainda não fez) ou reivindique o perfil existente. Isso o colocará no mapa quando pacientes buscarem "neuro oftalmologista" em sua região.</p>
+                    <p>Adicione fotos do consultório, equipamentos e resultados (antes/depois de cirurgias, quando apropriado). Adicione também seu menu de serviços (Refração, Catarata, Neuro Oftalmologia).</p>
+                    <p>Incentive pacientes satisfeitos a deixarem avaliações no Google. Avaliações aumentam sua autoridade e aparecem no Google Maps quando novos pacientes buscam por você.</p>
+                </div>
+
+                <div class="sugestao-item">
+                    <div class="sugestao-header">
+                        <span class="sugestao-emoji">🎯</span>
+                        <h3>Integrar Site, Instagram e Google em Uma Estratégia</h3>
+                    </div>
+                    <p>Seu site (mono.direct/saviofiorot) deve estar linkado de forma clara no Instagram e servir como "hub" central. Direcione tráfego do Instagram para o site, não apenas para WhatsApp.</p>
+                    <p>Certifique-se que seu site tenha: formulário de agendamento, demonstração clara de especialidades (Refração, Catarata, Neuro Oftalmologia), informações de contato e fotos/vídeos que reforcem sua expertise.</p>
+                    <p>Use o site para capturar leads que podem ser nurturados por email ou WhatsApp automaticamente, criando um funil profissional de atendimento.</p>
+                </div>
+
+                <div class="sugestao-item">
+                    <div class="sugestao-header">
+                        <span class="sugestao-emoji">⭐</span>
+                        <h3>Estruturar Conteúdo em Torno de Prova Social</h3>
+                    </div>
+                    <p>Crie reels e posts mostrando depoimentos de pacientes (com consentimento). Neuro oftalmologia impressiona — mostre os resultados e o feedback dos pacientes.</p>
+                    <p>Desenvolva conteúdo educativo que responda perguntas comuns: "O que é neuro oftalmologia?", "Quando preciso de um neuro oftalmologista?", "Qual é o procedimento de catarata?". Isso posiciona você como especialista.</p>
+                    <p>Destaque suas certificações (UNICAMP, CRM, RQE) de forma visual nos stories e posts. As credenciais são um diferencial importante para sua especialidade.</p>
+                </div>
+
+                <div class="sugestao-item">
+                    <div class="sugestao-header">
+                        <span class="sugestao-emoji">💰</span>
+                        <h3>Considerar Anúncios Pagos Estratégicos</h3>
+                    </div>
+                    <p>Você tem 2.157 seguidores qualificados — use anúncios no Instagram e Google Ads para expandir esse alcance entre pessoas buscando serviços oftalmológicos em sua região.</p>
+                    <p>Anúncios no Google (pesquisa) trarão pacientes com alta intenção de compra que digitam "oftalmologista perto de mim" ou "neuro oftalmologista". É um investimento com retorno mensurável.</p>
+                    <p>Anúncios no Instagram amplificam seus posts melhores, levando mais visitas qualificadas para seu perfil e para o formulário de agendamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
