@@ -8,25 +8,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --verde-escuro: #091105;
-    --verde-medio: #00392F;
-    --cinza-escuro: #323232;
-    --branco: #FFFFFF;
-    --verde-claro: #00503f;
-    --verde-accent: #00694f;
-    --bg: var(--verde-escuro);
-    --panel: #0f1c14;
-    --panel-2: #14271c;
-    --text: #e8efe9;
-    --muted: #8aa093;
-    --accent: #6fbfa3;
-    --border: #1c3327;
-    --row-alt: #0c1810;
-    --hover: #16291e;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  :root { --verde-escuro:#091105; --verde-medio:#00392F; --cinza-escuro:#323232; --branco:#FFFFFF; --verde-claro:#00503f; --verde-accent:#00694f; --bg:var(--verde-escuro); --panel:#0f1c14; --panel-2:#14271c; --text:#e8efe9; --muted:#8aa093; --accent:#6fbfa3; --border:#1c3327; --row-alt:#0c1810; --hover:#16291e; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
   body { margin:0; font-family:'DM Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.4; -webkit-font-smoothing:antialiased; }
   a { text-decoration:none; color:inherit; }
   .site-header { background:var(--verde-escuro); padding:16px 0; position:sticky; top:0; z-index:200; border-bottom:1px solid rgba(255,255,255,0.06); }
@@ -64,22 +48,10 @@
   tbody td { padding:8px 14px; border-bottom:1px solid var(--border); vertical-align:middle; max-width:320px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   tbody tr:nth-child(even) { background:var(--row-alt); }
   tbody tr:hover { background:var(--hover); }
-  .status-select { appearance:none; -webkit-appearance:none; background-color:transparent; border:none; color:var(--text); font-size:12px; font-family:inherit; font-weight:600; cursor:pointer; padding:5px 22px 5px 10px; border-radius:999px; min-width:150px; max-width:210px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.45)'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 7px center; transition:background-color 0.2s; }
+  .status-select { appearance:none; -webkit-appearance:none; background-color:transparent; border:none; color:var(--text); font-size:12px; font-family:inherit; font-weight:600; cursor:pointer; padding:5px 22px 5px 10px; border-radius:999px; min-width:160px; max-width:220px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.45)'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 7px center; transition:background-color 0.2s; }
   .status-select:focus { outline:2px solid var(--accent); outline-offset:2px; }
   .status-select option,.status-select optgroup { background:#1a2e22; color:var(--text); }
-  .s-lead            { background-color:#1c3a2a; }
-  .s-material        { background-color:#14311f; }
-  .s-prospeccao      { background-color:#1a3928; }
-  .s-prospeccao-ia   { background-color:#0e2e1e; }
-  .s-msg-enviada     { background-color:#00503f; }
-  .s-reuniao         { background-color:#005c46; }
-  .s-proposta        { background-color:#006650; }
-  .s-perdido         { background-color:#3b1010; }
-  .s-desqualificado  { background-color:#2d1111; }
-  .s-recuperacao     { background-color:#3b2a00; }
-  .s-fechado         { background-color:#003322; }
-  .s-antigo          { background-color:#1e2b22; }
-  .s-vazio           { background-color:#162018; }
+  .s-lead{background-color:#1c3a2a} .s-material{background-color:#14311f} .s-prospeccao{background-color:#1a3928} .s-prospeccao-ia{background-color:#0e2e1e} .s-msg-enviada{background-color:#00503f} .s-reuniao{background-color:#005c46} .s-proposta{background-color:#006650} .s-perdido{background-color:#3b1010} .s-desqualificado{background-color:#2d1111} .s-recuperacao{background-color:#3b2a00} .s-fechado{background-color:#003322} .s-antigo{background-color:#1e2b22} .s-vazio{background-color:#162018}
   .saving-wrap { display:inline-flex; align-items:center; gap:5px; }
   .saving-dot { width:7px; height:7px; border-radius:50%; opacity:0; transition:opacity 0.2s; }
   .saving-dot.spin { opacity:1; background:var(--accent); animation:blink 0.6s infinite; }
@@ -111,7 +83,6 @@
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="container">
     <a href="https://agenciadatta.com.br" class="header-logo">DATTA<span>.</span></a>
@@ -123,7 +94,6 @@
     </ul></nav>
   </div>
 </header>
-
 <div class="page-header">
   <div class="page-header-inner">
     <h1>Comercial Leads</h1>
@@ -131,9 +101,7 @@
     <div class="last-update"><span class="dot"></span><span id="last-update-text">Carregando...</span></div>
   </div>
 </div>
-
 <div id="error-banner" class="error-banner"></div>
-
 <div class="filters">
   <div class="filter-group">
     <label for="filter-view">Visualização</label>
@@ -158,7 +126,6 @@
   <button id="btn-refresh" class="btn-refresh">↻ Atualizar</button>
   <div class="summary"><strong id="count">0</strong> registros</div>
 </div>
-
 <div class="table-wrap">
   <table id="leads-table">
     <thead>
@@ -181,28 +148,25 @@
   </table>
   <div id="empty" class="empty" style="display:none;">Nenhum registro encontrado.</div>
 </div>
-
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
     <button class="modal-close" id="modal-close">×</button>
     <div id="modal-content"></div>
   </div>
 </div>
-
 <div id="loading" class="loading-overlay">
   <div class="spinner"></div><span>Atualizando dados...</span>
 </div>
-
 <script>
 (function () {
   const SB_URL = 'https://ivwkkiheyyjrqaipkaui.supabase.co';
   const SB_KEY = 'sb_publishable_omPyMwSarrPF6Yd0ZwOl6A_tKfDmOv7';
   const TABLE  = 'comercial_leads';
   const REFRESH_MS = 60 * 60 * 1000;
-
-  const STATUS_OPEN = ['LEAD','MATERIAL DE PROSPECÇÃO','PROSPECÇÃO/QUALIFICAÇÃO','PROSPECÇÃO/QUALIFICAÇÃO IA','MENSAGEM ENVIADA','REUNIÃO AGENDADA','PROPOSTA/NEGOCIAÇÃO'];
-  const STATUS_DONE = ['PERDIDOS','DESQUALIFICADOS','EM RECUPERAÇÃO','FECHADO'];
+  const STATUS_OPEN = ["Lead","Material De Prospecção","Prospecção/Qualificação","Prospecção/Qualificação IA","Mensagem Enviada","Reunião Agendada","Proposta/Negociação"];
+  const STATUS_DONE = ["Perdidos","Desqualificados","Em Recuperação","Fechado"];
   const STATUS_ALL  = [...STATUS_OPEN, ...STATUS_DONE];
+  const CLASS_MAP   = {"Lead":"s-lead","Material De Prospecção":"s-material","Prospecção/Qualificação":"s-prospeccao","Prospecção/Qualificação IA":"s-prospeccao-ia","Mensagem Enviada":"s-msg-enviada","Reunião Agendada":"s-reuniao","Proposta/Negociação":"s-proposta","Perdidos":"s-perdido","Desqualificados":"s-desqualificado","Em Recuperação":"s-recuperacao","Fechado":"s-fechado"};
 
   function statusGroup(s) {
     if (!s) return 'none';
@@ -210,272 +174,154 @@
     if (STATUS_DONE.includes(s)) return 'done';
     return 'legacy';
   }
-
-  function statusClass(s) {
-    const map = {
-      'LEAD':'s-lead','MATERIAL DE PROSPECÇÃO':'s-material',
-      'PROSPECÇÃO/QUALIFICAÇÃO':'s-prospeccao','PROSPECÇÃO/QUALIFICAÇÃO IA':'s-prospeccao-ia',
-      'MENSAGEM ENVIADA':'s-msg-enviada','REUNIÃO AGENDADA':'s-reuniao',
-      'PROPOSTA/NEGOCIAÇÃO':'s-proposta','PERDIDOS':'s-perdido',
-      'DESQUALIFICADOS':'s-desqualificado','EM RECUPERAÇÃO':'s-recuperacao',
-      'FECHADO':'s-fechado'
-    };
-    return map[s] || (s ? 's-antigo' : 's-vazio');
-  }
+  function statusClass(s) { return CLASS_MAP[s] || (s ? 's-antigo' : 's-vazio'); }
 
   let DATA = [], sortKey = 'id', sortDir = -1, lastFetchTime = 0;
-
-  const tbody       = document.getElementById('leads-body');
-  const emptyEl     = document.getElementById('empty');
-  const countEl     = document.getElementById('count');
-  const fView       = document.getElementById('filter-view');
-  const fStatus     = document.getElementById('filter-status');
-  const fCat        = document.getElementById('filter-categoria');
-  const fSearch     = document.getElementById('filter-search');
-  const loading     = document.getElementById('loading');
-  const errorBanner = document.getElementById('error-banner');
-  const lastUpdEl   = document.getElementById('last-update-text');
-  const btnRefresh  = document.getElementById('btn-refresh');
+  const tbody=document.getElementById('leads-body'), emptyEl=document.getElementById('empty'),
+    countEl=document.getElementById('count'), fView=document.getElementById('filter-view'),
+    fStatus=document.getElementById('filter-status'), fCat=document.getElementById('filter-categoria'),
+    fSearch=document.getElementById('filter-search'), loading=document.getElementById('loading'),
+    errorBanner=document.getElementById('error-banner'), lastUpdEl=document.getElementById('last-update-text'),
+    btnRefresh=document.getElementById('btn-refresh');
 
   async function fetchData() {
-    loading.classList.add('active');
-    errorBanner.classList.remove('active');
-    btnRefresh.disabled = true;
+    loading.classList.add('active'); errorBanner.classList.remove('active'); btnRefresh.disabled=true;
     try {
-      const res = await fetch(SB_URL + '/rest/v1/' + TABLE + '?select=*&order=id.desc&limit=10000', {
-        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }, cache: 'no-store'
-      });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      DATA = await res.json();
-      lastFetchTime = Date.now();
-      populateFilters();
-      applyFilters();
-      lastUpdEl.textContent = 'Atualizado em ' + new Date().toLocaleString('pt-BR', { dateStyle:'short', timeStyle:'medium' });
-    } catch (e) {
-      errorBanner.textContent = 'Erro ao carregar: ' + e.message;
-      errorBanner.classList.add('active');
-      lastUpdEl.textContent = 'Falha na atualização';
-    } finally {
-      loading.classList.remove('active');
-      btnRefresh.disabled = false;
-    }
+      const res = await fetch(SB_URL+'/rest/v1/'+TABLE+'?select=*&order=id.desc&limit=10000',
+        { headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}, cache:'no-store' });
+      if (!res.ok) throw new Error('HTTP '+res.status);
+      DATA = await res.json(); lastFetchTime = Date.now();
+      populateFilters(); applyFilters();
+      lastUpdEl.textContent = 'Atualizado em '+new Date().toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'medium'});
+    } catch(e) {
+      errorBanner.textContent='Erro ao carregar: '+e.message; errorBanner.classList.add('active');
+      lastUpdEl.textContent='Falha na atualização';
+    } finally { loading.classList.remove('active'); btnRefresh.disabled=false; }
   }
 
   async function patchStatus(id, newStatus, sel, dot) {
-    dot.className = 'saving-dot spin';
-    const prev = DATA.find(r => r.id === id)?.status || '';
+    dot.className='saving-dot spin';
+    const prev = DATA.find(r=>r.id===id)?.status||'';
     try {
-      const res = await fetch(SB_URL + '/rest/v1/' + TABLE + '?id=eq.' + id, {
-        method: 'PATCH',
-        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-        body: JSON.stringify({ status: newStatus })
+      const res = await fetch(SB_URL+'/rest/v1/'+TABLE+'?id=eq.'+id, {
+        method:'PATCH',
+        headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json',Prefer:'return=minimal'},
+        body:JSON.stringify({status:newStatus})
       });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const row = DATA.find(r => r.id === id);
-      if (row) row.status = newStatus;
-      sel.className = 'status-select ' + statusClass(newStatus);
-      dot.className = 'saving-dot ok';
-      setTimeout(() => { dot.className = 'saving-dot'; }, 2000);
+      if (!res.ok) throw new Error('HTTP '+res.status);
+      const row=DATA.find(r=>r.id===id); if(row) row.status=newStatus;
+      sel.className='status-select '+statusClass(newStatus);
+      dot.className='saving-dot ok'; setTimeout(()=>{dot.className='saving-dot';},2000);
       applyFilters();
-    } catch (e) {
-      sel.value = prev;
-      dot.className = 'saving-dot err';
-      setTimeout(() => { dot.className = 'saving-dot'; }, 3000);
+    } catch(e) {
+      sel.value=prev; dot.className='saving-dot err'; setTimeout(()=>{dot.className='saving-dot';},3000);
     }
   }
 
-  function buildStatusCell(id, currentStatus) {
-    const wrap = document.createElement('div');
-    wrap.className = 'saving-wrap';
-
-    const sel = document.createElement('select');
-    sel.className = 'status-select ' + statusClass(currentStatus);
-
-    const isNew = STATUS_ALL.includes(currentStatus);
-
-    if (!isNew) {
-      const o = document.createElement('option');
-      o.value = currentStatus || '';
-      o.textContent = currentStatus ? currentStatus + ' (antigo)' : '— sem status —';
-      o.selected = true;
+  function buildStatusCell(id, cur) {
+    const wrap=document.createElement('div'); wrap.className='saving-wrap';
+    const sel=document.createElement('select'); sel.className='status-select '+statusClass(cur);
+    if (!STATUS_ALL.includes(cur)) {
+      const o=document.createElement('option');
+      o.value=cur||''; o.textContent=cur?cur+' (antigo)':'— sem status —'; o.selected=true;
       sel.appendChild(o);
     }
-
-    const gOpen = document.createElement('optgroup');
-    gOpen.label = 'Em aberto';
-    STATUS_OPEN.forEach(v => {
-      const o = document.createElement('option');
-      o.value = v; o.textContent = v;
-      if (v === currentStatus) o.selected = true;
-      gOpen.appendChild(o);
+    [['Em aberto',STATUS_OPEN],['Concluídos',STATUS_DONE]].forEach(([label,list])=>{
+      const g=document.createElement('optgroup'); g.label=label;
+      list.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; if(v===cur)o.selected=true; g.appendChild(o); });
+      sel.appendChild(g);
     });
-
-    const gDone = document.createElement('optgroup');
-    gDone.label = 'Concluídos';
-    STATUS_DONE.forEach(v => {
-      const o = document.createElement('option');
-      o.value = v; o.textContent = v;
-      if (v === currentStatus) o.selected = true;
-      gDone.appendChild(o);
-    });
-
-    sel.appendChild(gOpen);
-    sel.appendChild(gDone);
-
-    const dot = document.createElement('div');
-    dot.className = 'saving-dot';
-
-    sel.addEventListener('change', e => {
-      e.stopPropagation();
-      patchStatus(id, sel.value, sel, dot);
-    });
-
-    wrap.appendChild(sel);
-    wrap.appendChild(dot);
-    return wrap;
+    const dot=document.createElement('div'); dot.className='saving-dot';
+    sel.addEventListener('change',e=>{e.stopPropagation();patchStatus(id,sel.value,sel,dot);});
+    wrap.appendChild(sel); wrap.appendChild(dot); return wrap;
   }
 
   function populateFilters() {
-    const prev = fStatus.value;
-    fStatus.innerHTML = '<option value="">Todos</option>';
-    [...new Set(DATA.map(r => r.status).filter(Boolean))].sort().forEach(s => {
-      const o = document.createElement('option');
-      o.value = s; o.textContent = s;
-      fStatus.appendChild(o);
+    const prev=fStatus.value;
+    fStatus.innerHTML='<option value="">Todos</option>';
+    [...new Set(DATA.map(r=>r.status).filter(Boolean))].sort().forEach(s=>{
+      const o=document.createElement('option'); o.value=s; o.textContent=s; fStatus.appendChild(o);
     });
-    if ([...fStatus.options].some(o => o.value === prev)) fStatus.value = prev;
-
-    const prevC = fCat.value;
-    fCat.innerHTML = '<option value="">Todas</option>';
-    [...new Set(DATA.map(r => r.categoria).filter(Boolean))].sort().forEach(c => {
-      const o = document.createElement('option');
-      o.value = c; o.textContent = c;
-      fCat.appendChild(o);
+    if([...fStatus.options].some(o=>o.value===prev)) fStatus.value=prev;
+    const prevC=fCat.value;
+    fCat.innerHTML='<option value="">Todas</option>';
+    [...new Set(DATA.map(r=>r.categoria).filter(Boolean))].sort().forEach(c=>{
+      const o=document.createElement('option'); o.value=c; o.textContent=c; fCat.appendChild(o);
     });
-    if ([...fCat.options].some(o => o.value === prevC)) fCat.value = prevC;
+    if([...fCat.options].some(o=>o.value===prevC)) fCat.value=prevC;
   }
 
   function applyFilters() {
-    const view = fView.value;
-    const sv = fStatus.value;
-    const cv = fCat.value;
-    const q  = fSearch.value.trim().toLowerCase();
-
-    let rows = DATA.filter(r => {
-      if (view === 'open' && statusGroup(r.status) !== 'open') return false;
-      if (view === 'done' && statusGroup(r.status) !== 'done') return false;
-      if (sv && r.status !== sv) return false;
-      if (cv && r.categoria !== cv) return false;
-      if (q) {
-        const hay = [r.nome, r.google_cidade, r.google_bairro, r.ig_username, r.categoria, r.fonte_de_pesquisa].filter(Boolean).join(' ').toLowerCase();
-        if (!hay.includes(q)) return false;
-      }
+    const view=fView.value, sv=fStatus.value, cv=fCat.value, q=fSearch.value.trim().toLowerCase();
+    let rows=DATA.filter(r=>{
+      if(view==='open'&&statusGroup(r.status)!=='open') return false;
+      if(view==='done'&&statusGroup(r.status)!=='done') return false;
+      if(sv&&r.status!==sv) return false;
+      if(cv&&r.categoria!==cv) return false;
+      if(q){const hay=[r.nome,r.google_cidade,r.google_bairro,r.ig_username,r.categoria,r.fonte_de_pesquisa].filter(Boolean).join(' ').toLowerCase();if(!hay.includes(q))return false;}
       return true;
     });
-
-    rows.sort((a, b) => {
-      let av = a[sortKey], bv = b[sortKey];
-      if (av == null && bv == null) return 0;
-      if (av == null) return 1; if (bv == null) return -1;
-      const an = Number(av), bn = Number(bv);
-      if (!isNaN(an) && !isNaN(bn)) return (an - bn) * sortDir;
-      return String(av).localeCompare(String(bv)) * sortDir;
+    rows.sort((a,b)=>{
+      let av=a[sortKey],bv=b[sortKey];
+      if(av==null&&bv==null)return 0; if(av==null)return 1; if(bv==null)return -1;
+      const an=Number(av),bn=Number(bv);
+      if(!isNaN(an)&&!isNaN(bn))return(an-bn)*sortDir;
+      return String(av).localeCompare(String(bv))*sortDir;
     });
-
-    tbody.innerHTML = '';
-    countEl.textContent = rows.length;
-    emptyEl.style.display = rows.length === 0 ? 'block' : 'none';
-    if (!rows.length) return;
-
-    const frag = document.createDocumentFragment();
-    rows.forEach(r => {
-      const tr = document.createElement('tr');
-      tr.className = 'row-link';
-      tr.dataset.id = r.id;
-
-      const links = (() => {
-        const p = [];
-        if (r.instagram_url) p.push('<a class="link" href="' + esc(r.instagram_url) + '" target="_blank" rel="noopener">IG</a>');
-        if (r.site_url) p.push('<a class="link" href="' + esc(r.site_url) + '" target="_blank" rel="noopener">Site</a>');
-        if (r.material_de_prospeccao) p.push('<a class="link" href="' + esc(r.material_de_prospeccao) + '" target="_blank" rel="noopener">Material</a>');
-        return p.join(' · ') || '<span style="color:var(--muted)">—</span>';
+    tbody.innerHTML=''; countEl.textContent=rows.length;
+    emptyEl.style.display=rows.length===0?'block':'none';
+    if(!rows.length)return;
+    const frag=document.createDocumentFragment();
+    rows.forEach(r=>{
+      const tr=document.createElement('tr'); tr.className='row-link'; tr.dataset.id=r.id;
+      const links=(()=>{
+        const p=[];
+        if(r.instagram_url)p.push('<a class="link" href="'+esc(r.instagram_url)+'" target="_blank" rel="noopener">IG</a>');
+        if(r.site_url)p.push('<a class="link" href="'+esc(r.site_url)+'" target="_blank" rel="noopener">Site</a>');
+        if(r.material_de_prospeccao)p.push('<a class="link" href="'+esc(r.material_de_prospeccao)+'" target="_blank" rel="noopener">Material</a>');
+        return p.join(' · ')||'<span style="color:var(--muted)">—</span>';
       })();
-
-      tr.innerHTML =
-        '<td class="id-cell">' + fmt(r.id) + '</td>' +
-        '<td>' + fmt(r.data) + '</td>' +
-        '<td>' + fmt(r.nome) + '</td>' +
-        '<td>' + fmt(r.categoria) + '</td>' +
-        '<td class="status-cell"></td>' +
-        '<td>' + fmt(r.fonte_de_pesquisa) + '</td>' +
-        '<td>' + fmt(r.google_cidade) + '</td>' +
-        '<td>' + fmt(r.google_score) + '</td>' +
-        '<td>' + fmt(r.google_reviews) + '</td>' +
-        '<td>' + fmt(r.ig_seguidores) + '</td>' +
-        '<td>' + fmt(r.ig_username) + '</td>' +
-        '<td>' + links + '</td>';
-
-      tr.querySelector('.status-cell').appendChild(buildStatusCell(r.id, r.status));
+      tr.innerHTML='<td class="id-cell">'+fmt(r.id)+'</td><td>'+fmt(r.data)+'</td><td>'+fmt(r.nome)+'</td><td>'+fmt(r.categoria)+'</td><td class="status-cell"></td><td>'+fmt(r.fonte_de_pesquisa)+'</td><td>'+fmt(r.google_cidade)+'</td><td>'+fmt(r.google_score)+'</td><td>'+fmt(r.google_reviews)+'</td><td>'+fmt(r.ig_seguidores)+'</td><td>'+fmt(r.ig_username)+'</td><td>'+links+'</td>';
+      tr.querySelector('.status-cell').appendChild(buildStatusCell(r.id,r.status));
       frag.appendChild(tr);
     });
     tbody.appendChild(frag);
   }
 
-  function esc(s) {
-    if (!s) return '';
-    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  }
-  function fmt(v) {
-    if (v == null || v === '') return '<span style="color:var(--muted)">—</span>';
-    return esc(String(v));
-  }
+  function esc(s){if(!s)return'';return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function fmt(v){if(v==null||v==='')return'<span style="color:var(--muted)">—</span>';return esc(String(v));}
 
-  document.querySelectorAll('thead th[data-key]').forEach(th => {
-    th.addEventListener('click', () => {
-      const k = th.dataset.key;
-      if (sortKey === k) sortDir = -sortDir; else { sortKey = k; sortDir = 1; }
-      applyFilters();
-    });
+  document.querySelectorAll('thead th[data-key]').forEach(th=>{
+    th.addEventListener('click',()=>{const k=th.dataset.key;if(sortKey===k)sortDir=-sortDir;else{sortKey=k;sortDir=1;}applyFilters();});
   });
 
-  const overlay = document.getElementById('modal-overlay');
-  const modalContent = document.getElementById('modal-content');
-  document.getElementById('modal-close').addEventListener('click', () => overlay.classList.remove('active'));
-  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('active'); });
-
-  tbody.addEventListener('click', e => {
-    if (['SELECT','OPTION','A'].includes(e.target.tagName)) return;
-    const tr = e.target.closest('tr.row-link');
-    if (!tr) return;
-    const row = DATA.find(r => r.id === Number(tr.dataset.id));
-    if (!row) return;
-    let html = '<h2>' + esc(row.nome || '(sem nome)') + '</h2>';
-    html += '<div class="subtitle" style="color:var(--muted);font-size:13px;">ID ' + row.id + ' · ' + esc(row.data || '') + '</div>';
-    const order = ['status','categoria','fonte_de_pesquisa','google_cidade','google_bairro','google_telefone','google_score','google_reviews','google_rank','ig_username','ig_biografia','ig_seguidores','ig_seguindo','ig_posts','instagram_url','site_url','material_de_prospeccao','site_analise','instagram_analise','mensagem_de_prospeccao','id_clickup'];
-    order.forEach(k => {
-      const v = row[k];
-      if (v == null || v === '') return;
-      html += '<div class="field"><div class="field-label">' + k + '</div><div class="field-value">';
-      if (typeof v === 'string' && /^https?:\/\//.test(v)) {
-        html += '<a href="' + esc(v) + '" target="_blank" rel="noopener">' + esc(v) + '</a>';
-      } else { html += esc(String(v)); }
-      html += '</div></div>';
+  const overlay=document.getElementById('modal-overlay'), modalContent=document.getElementById('modal-content');
+  document.getElementById('modal-close').addEventListener('click',()=>overlay.classList.remove('active'));
+  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active');});
+  tbody.addEventListener('click',e=>{
+    if(['SELECT','OPTION','A'].includes(e.target.tagName))return;
+    const tr=e.target.closest('tr.row-link'); if(!tr)return;
+    const row=DATA.find(r=>r.id===Number(tr.dataset.id)); if(!row)return;
+    let html='<h2>'+esc(row.nome||'(sem nome)')+'</h2>';
+    html+='<div class="subtitle" style="color:var(--muted);font-size:13px;">ID '+row.id+' · '+esc(row.data||'')+'</div>';
+    ['status','categoria','fonte_de_pesquisa','google_cidade','google_bairro','google_telefone','google_score','google_reviews','google_rank','ig_username','ig_biografia','ig_seguidores','ig_seguindo','ig_posts','instagram_url','site_url','material_de_prospeccao','site_analise','instagram_analise','mensagem_de_prospeccao','id_clickup'].forEach(k=>{
+      const v=row[k]; if(v==null||v==='')return;
+      html+='<div class="field"><div class="field-label">'+k+'</div><div class="field-value">';
+      if(typeof v==='string'&&/^https?:\/\//.test(v)){html+='<a href="'+esc(v)+'" target="_blank" rel="noopener">'+esc(v)+'</a>';}
+      else{html+=esc(String(v));}
+      html+='</div></div>';
     });
-    modalContent.innerHTML = html;
-    overlay.classList.add('active');
+    modalContent.innerHTML=html; overlay.classList.add('active');
   });
 
-  fView.addEventListener('change', applyFilters);
-  fStatus.addEventListener('change', applyFilters);
-  fCat.addEventListener('change', applyFilters);
-  fSearch.addEventListener('input', applyFilters);
-  btnRefresh.addEventListener('click', fetchData);
-
+  fView.addEventListener('change',applyFilters);
+  fStatus.addEventListener('change',applyFilters);
+  fCat.addEventListener('change',applyFilters);
+  fSearch.addEventListener('input',applyFilters);
+  btnRefresh.addEventListener('click',fetchData);
   fetchData();
-  setInterval(fetchData, REFRESH_MS);
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden && Date.now() - lastFetchTime > 5 * 60 * 1000) fetchData();
-  });
+  setInterval(fetchData,REFRESH_MS);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-lastFetchTime>5*60*1000)fetchData();});
 })();
 </script>
 </body>
