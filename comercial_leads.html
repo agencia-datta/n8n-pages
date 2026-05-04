@@ -35,13 +35,15 @@ a{text-decoration:none;color:inherit;}
 .custom-select{min-width:220px;font-size:13px;}
 .select-box{background:var(--panel-2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:6px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
 .select-box:hover{border-color:var(--accent);}
-.select-dropdown{position:absolute;top:calc(100% + 4px);left:0;width:260px;background:var(--panel);border:1px solid var(--border);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:200;max-height:320px;overflow-y:auto;padding:8px;display:none;flex-direction:column;gap:12px;}
+.select-dropdown{position:absolute;top:calc(100% + 4px);left:0;min-width:100%;width:max-content;background:var(--panel);border:1px solid var(--border);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:200;max-height:320px;overflow-y:auto;overflow-x:hidden;padding:12px;display:none;flex-direction:column;gap:12px;}
 .select-dropdown.active{display:flex;}
 .chk-group{display:flex;flex-direction:column;gap:4px;}
-.chk-group-label{font-weight:600;padding-bottom:6px;margin-bottom:2px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;cursor:pointer;}
-.chk-item{display:flex;align-items:center;gap:8px;padding:4px 8px;cursor:pointer;border-radius:4px;}
+
+/* Classes super específicas para isolar das regras globais de label do site */
+.custom-select label.chk-group-label{font-weight:600;padding-bottom:6px;margin-bottom:2px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap;color:var(--text);text-transform:none;letter-spacing:normal;font-size:13px;}
+.custom-select label.chk-item{display:flex;align-items:center;gap:8px;padding:6px 8px;cursor:pointer;border-radius:4px;white-space:nowrap;color:var(--text);text-transform:none;letter-spacing:normal;font-size:13px;margin:0;}
 .chk-item:hover{background:var(--hover);}
-.chk-item input[type="checkbox"],.chk-group-label input[type="checkbox"]{accent-color:var(--accent);cursor:pointer;width:14px;height:14px;}
+.chk-item input[type="checkbox"],.chk-group-label input[type="checkbox"]{accent-color:var(--accent);cursor:pointer;width:15px;height:15px;margin:0;}
 
 .summary{margin-left:auto;color:var(--muted);font-size:13px;align-self:center;}
 .summary strong{color:var(--accent);font-size:16px;}
@@ -361,12 +363,10 @@ a.link:hover{text-decoration:underline;}
 
   /* ── APPLY FILTERS ── */
   function applyFilters(){
-    // Pegar status ativados
     const selectedStatuses = Array.from(document.querySelectorAll('.status-chk:checked')).map(cb => cb.value);
     const q=fSearch.value.trim().toLowerCase();
     
     let rows=DATA.filter(r=>{
-      // Filtra de acordo com os status marcados no checkbox
       if (selectedStatuses.length === 0) return false;
       if (!selectedStatuses.includes(r.status)) return false;
 
