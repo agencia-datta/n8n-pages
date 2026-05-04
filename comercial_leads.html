@@ -43,7 +43,9 @@ a{text-decoration:none;color:inherit;}
 .custom-select label.chk-group-label{font-weight:600;padding-bottom:6px;margin-bottom:2px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap;color:var(--text);text-transform:none;letter-spacing:normal;font-size:13px;}
 .custom-select label.chk-item{display:flex;align-items:center;gap:8px;padding:6px 8px;cursor:pointer;border-radius:4px;white-space:nowrap;color:var(--text);text-transform:none;letter-spacing:normal;font-size:13px;margin:0;}
 .chk-item:hover{background:var(--hover);}
-.chk-item input[type="checkbox"],.chk-group-label input[type="checkbox"]{accent-color:var(--accent);cursor:pointer;width:15px;height:15px;margin:0;}
+
+/* Zerando min-width e padding para o checkbox não herdar as regras do campo de busca */
+.chk-item input[type="checkbox"],.chk-group-label input[type="checkbox"]{accent-color:var(--accent);cursor:pointer;width:15px;height:15px;margin:0;min-width:0;padding:0;}
 
 .summary{margin-left:auto;color:var(--muted);font-size:13px;align-self:center;}
 .summary strong{color:var(--accent);font-size:16px;}
